@@ -2,8 +2,367 @@
 @tailwind components;
 @tailwind utilities;
 
+/* TODO: remove spinner buttons from input type number, or make stylish */
+/* @layer base {
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+} */
+
 body {
-    background: #000000;
-    color: #ffffff;
+    /* background-color: #020013; */
+    background-color: #000a14;
+    /* background-color: #15252c; */
+    /* background-color: #ff0013; */
+
+    /* height: 100vh; */
+}
+
+body,
+.prose body,
+.prose {
+    font-family: "Rajdhani", sans-serif;
     font-size: 1.25rem;
+}
+
+.prose h1,
+h1 {
+    font-size: 2.5rem;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+.prose h2,
+h2 {
+    font-size: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+.prose h3,
+h3 {
+    font-size: 1.5rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+.prose h4,
+h4 {
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.prose h5,
+h5 {
+    font-size: 1.15rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.prose h6,
+h6 {
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    /* font-family: "Montserrat", sans-serif; */
+    font-family: "Orbitron", sans-serif;
+    color: #73e5ff;
+}
+
+a,
+.prose a {
+    text-decoration: none;
+    /* color: #02597f; */
+    color: #7fbbe2;
+}
+
+/* .menu :where(li) > :where(*:not(ul)) { */
+
+a:hover {
+    text-decoration: none;
+    /* color: #0273a5; */
+    color: #7fffff;
+}
+
+.btn {
+    text-decoration: none;
+    transition-duration: 69ms;
+    color: #000000;
+    font-family: "VT323", monospace;
+}
+
+.btn-outline {
+    color: #7fbbe2;
+}
+
+a.btn:hover {
+    color: initial;
+}
+
+/* Tailwind makes ALL THE BUTTONS UPPER CASE PLS STAHP */
+.btn {
+    text-transform: initial;
+    font-size: 1.25rem;
+}
+
+.btn-scifi {
+    --curve-size: 2.5em;
+    /* box-shadow: 10px 10px 20px rgba(0, 0, 0, .6); */
+
+    padding-left: 1.5em !important;
+    padding-right: 1.5em !important;
+
+    clip-path: polygon(
+        /* Top-left */ 0% var(--curve-size),
+        var(--curve-size) 0,
+        /* top-right */ 100% 0,
+        100% calc(100% - var(--curve-size)),
+        /* bottom-right 1 */ calc(100% - var(--curve-size)) 100%,
+        /* bottom-right 2 */ 0 100%
+    ) !important;
+}
+
+.btn-xcom {
+    clip-path: polygon(
+        0 0,
+        calc(100% - 30px) 0,
+        100% 30px,
+        100% 100%,
+        30px 100%,
+        0 calc(100% - 30px)
+    );
+    /* background-color: teal !important; */
+    /* --tw- */
+}
+
+.badge {
+    padding: 0.75rem;
+    padding-bottom: 1rem;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+}
+
+.none {
+    all: initial !important;
+    color: #aaaaaa !important;
+}
+
+/* Some of Tailwind Typeography '.prose' settings are a bit wonky, but most are worthwhile */
+.prose {
+    max-width: initial !important; /* 65ch is difficult to override, let's nuke it */
+    margin-left: auto;
+    margin-right: auto;
+}
+.prose img {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.prose figure {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.prose h2.card-title {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.prose pre,
+pre {
+    font-family: "OCR A", monospace;
+    font-size: 0.8rem;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* .modal {
+    background: #ff0000 !important;
+} */
+
+/* header menu active link */
+.menu :where(li:not(.menu-title):not(:empty)) > :where(:not(ul).active),
+.menu :where(li:not(.menu-title):not(:empty)) > :where(*:not(ul):active) {
+    background-color: transparent;
+    border: 1px solid #409aff;
+}
+
+.menu :where(li) > :where(*:not(ul)) {
+    /* gap: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem; */
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+    /* color: currentColor; */
+}
+
+.input,
+.textarea,
+.select,
+.checkbox,
+.radio,
+.file {
+    font-size: 1.4rem;
+}
+
+input::placeholder,
+textarea::placeholder {
+    opacity: 0.25;
+    color: #aaaaaa;
+}
+
+code {
+    background-color: #000000;
+    color: #00ff00;
+    padding: 0.5rem;
+}
+
+.translucent {
+    color: #73e5ff;
+}
+
+hr {
+    border-top: 1px solid #73e5ff66;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.hh01 {
+    --hud-tl1: clip;
+    --hud-tl1-size: 2.5rem;
+
+    --hud-br1: clip;
+    --hud-br1-size: 2.5rem;
+
+    --hud-inlay-bg: #b2a5fd;
+    /* --hud-inlay-opacity: 0.33; */
+
+    padding: 1.5rem;
+    margin: auto;
+    max-width: 66%;
+}
+
+.hexed {
+    --hud-inlay-bg: #0bb2b0;
+    --hud-inlay-opacity: 0.1;
+    --hud-bl-inset: 0.75rem;
+    --hud-tr1: clip;
+    --hud-tr1-size: 3rem;
+    --hud-l2: clip;
+    --hud-l1: clip;
+    --hud-bl2: round;
+    --hud-bl1: clip;
+    --hud-l2-size: 1rem;
+    --hud-l2-inset-y: 25%;
+    --hud-l1-size: 0.25rem;
+    --hud-bl2-size: 1rem;
+    --hud-bl1-size: 0.5rem;
+    --hud-b1: clip;
+    --hud-b1-size: 1rem;
+    --hud-b1-inset-x: 33%;
+    --hud-b2: clip;
+    --hud-b2-size: 0.25rem;
+    --hud-br1: round;
+    --hud-br1-size: 1rem;
+    width: 100%;
+    height: max(50%, 150px);
+    --hud-inlay-all: 7px;
+    --hud-border-all: 2px;
+    --hud-border-opacity: 0.75;
+    --hud-border-bg: #0bb2b0;
+
+    padding: 3rem;
+    margin: auto;
+    max-width: 80%;
+}
+
+/* <div id="announc3ment" data-augmented-ui="" class=""> */
+#xcomgreenright {
+    --aug-clip-tl1: initial;
+    --aug-round-tr1: initial;
+    --aug-clip-br1: initial;
+    --aug-round-bl1: initial;
+    --aug-border: initial;
+    --aug-inlay: initial;
+    --aug-border-all: 1px;
+    --aug-inlay-all: 2px;
+    --aug-border-bg: lime;
+    --aug-inlay-bg: lime;
+    --aug-inlay-opacity: 0.06;
+    --aug-tl1: 40px;
+    --aug-br1: 40px;
+    --aug-tr1: 10px;
+    --aug-bl1: 10px;
+    /* color: #cccccc;
+    text-align: center; */
+    /* padding-left: 30px;
+    padding-right: 30px; */
+    /* padding-top: 20px; */
+    /* padding-bottom: 20px;
+    max-width: 66%; */
+    /* margin: 0.25rem auto; */
+    /* font-size: 0.9rem; */
+    /*background: url("/img/chubie.png") right 30px bottom 10px / auto 75% no-repeat;*/
+}
+
+#xcomgreenright:hover {
+    --aug-inlay-opacity: 0.1;
+}
+
+#xcomgreenright::before {
+    transition: opacity 1s ease-in;
+}
+
+#xcomgreenright:hover::before {
+    transition: opacity 1s ease-in 3s;
+}
+
+#xcomgreenright b {
+    color: white;
+    font-size: 1rem;
+}
+
+#xcomblueleft {
+    /* --aug-clip-tl1: initial; */
+    /* --aug-round-tr1: initial; */
+    /* --aug-clip-br1: initial; */
+    /* --aug-round-bl1: initial; */
+    --aug-border: initial;
+    --aug-inlay: initial;
+    --aug-border-all: 1px;
+    --aug-inlay-all: 2px;
+    --aug-border-bg: #026087;
+    --aug-inlay-bg: #010f1a;
+    --aug-inlay-opacity: 0.7;
+    /* --aug-tl1: 40px; */
+    /* --aug-br1: 40px; */
+    /* --aug-tr1: 10px; */
+    --aug-bl1: 30px;
+    --aug-b1: 20px;
+    /* --aug-br: 30px; */
+    /* color: #cccccc;
+    text-align: center; */
+    /* padding-left: 30px;
+    padding-right: 30px; */
+    /* padding-top: 20px; */
+    /* padding-bottom: 20px;
+    max-width: 66%; */
+    /* margin: 0.25rem auto; */
+    /* font-size: 0.9rem; */
+    /*background: url("/img/chubie.png") right 30px bottom 10px / auto 75% no-repeat;*/
+}
+
+.planchunk {
+    border: 1px solid #73e5ff55;
+    padding: 0.75rem;
 }
