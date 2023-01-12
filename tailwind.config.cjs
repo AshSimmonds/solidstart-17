@@ -6,9 +6,6 @@ module.exports = {
           backdropBrightness: {
               25: ".25",
           },
-          backgroundImage: {
-              'footer-texture': "url('/copycat-background-darkblue-redlines-whitedots.png')",
-          }
       },
   },
   plugins: [
