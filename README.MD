@@ -1,12 +1,5 @@
-# Create JD App
+# SolidStart SSR with @tanstack/query v5 preview using tRPC
 
-This project was created using [Create JD App](https://github.com/OrJDev/create-jd-app)
+Bunch of things that can be fixed/optimised in this new test environment, feel free to contribute so we can get tRPC SSR up and running vunderbar ASAP.
 
-## Deploying To Vercel
-### You Are Done
-Create a github repo and push your code to it, then deploy it to vercel (:
-  
-### Enviroment Variables
-  
-- `ENABLE_VC_BUILD`=`1` .
-
+Project created using [Create JD App](https://github.com/OrJDev/create-jd-app)
