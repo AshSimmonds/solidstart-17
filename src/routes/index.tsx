@@ -1,5 +1,5 @@
-// import { createQuery, useQueryClient } from '@adeora/solid-query';
-import { createQuery, useQueryClient } from "@tanstack/solid-query";
+import { createQuery, useQueryClient } from '@adeora/solid-query';
+// import { createQuery, useQueryClient } from "@tanstack/solid-query";
 import type { VoidComponent } from "solid-js";
 import { createSignal, For, Suspense } from "solid-js";
 import { Title } from "solid-start"
