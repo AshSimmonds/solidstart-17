@@ -91,6 +91,10 @@ const Home: VoidComponent = () => {
                   src="https://cdn-icons-png.flaticon.com/512/5968/5968866.png"
                   class="w-6 float-left mr-2"
                 /> tRPC doesn't show latest when clicking through fast</a></li>
+                <li><a href="https://github.com/AshSimmonds/solidstart-17/issues/12" target="_blank"><img
+                  src="https://cdn-icons-png.flaticon.com/512/5968/5968866.png"
+                  class="w-6 float-left mr-2"
+                /> Reactivity: 'function should be passed to a tracked scope' warning</a></li>
               </ul>
             </pre>
             <h3>Contact channels:</h3>
