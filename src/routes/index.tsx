@@ -81,8 +81,9 @@ const Home: VoidComponent = () => {
           <For each={queryInRoute.data}>
             {(post) => (
               <div>
-                <h3>{post.title}</h3>
+                <h3>ID: {post.id} - {post.title}</h3>
                 <p>{post.body}</p>
+                <code class="mt-4 text-xs">https://jsonplaceholder.typicode.com/posts/{post.id}</code>
                 <pre class="hidden">
                   {JSON.stringify(post, null, 2)}
                 </pre>
@@ -92,11 +93,11 @@ const Home: VoidComponent = () => {
         </Suspense>
       </div>
 
-      <pre class="hiddend">
+      <pre class="hidden">
         {JSON.stringify(queryInRoute, null, 2)}
       </pre>
 
-      <div class="border-2 mt-12" >
+      <div class="bg-base-100 p-4 mt-12" >
         Iterating on conversations on Twitter here:<br />
         https://twitter.com/aryan__deora/status/1613564289180213249<br />
         <br />
