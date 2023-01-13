@@ -88,7 +88,9 @@ const Home: VoidComponent = () => {
 
       <div class="bg-base-100 p-4 mt-4 mb-4" >
 
-        <h3 class="mt-0">Current problems <a href="https://github.com/AshSimmonds/solidstart-17/issues/1" class="text-xs btn-sm btn-warning btn-outline" target="_blank">github issue</a></h3>
+        <h3 class="mt-0">Current problems <a href="https://github.com/AshSimmonds/solidstart-17/issues" class="btn text-xs btn-sm btn-secondary btn-outline" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968866.png" class="w-6 mr-2" /> github issues</a></h3>
+
+        
 
         <CheckboxShowHide showWhat='background details and problems' >
 
