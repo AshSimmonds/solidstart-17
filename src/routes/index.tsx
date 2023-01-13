@@ -98,11 +98,17 @@ const Home: VoidComponent = () => {
       </pre>
 
       <div class="bg-base-100 p-4 mt-12" >
-        Iterating on conversations on Twitter here:<br />
-        https://twitter.com/aryan__deora/status/1613564289180213249<br />
-        <br />
-        And on Discord here:<br />
-        https://discord.com/channels/722131463138705510/1063020750472237106/1063020750472237106
+        Iterating on conversations on Twitter here:
+        <div class="mt-1 mb-4">
+          <code class="text-xs">https://twitter.com/aryan__deora/status/1613564289180213249</code>
+        </div>
+
+        And on Discord here:
+
+        <div class="mt-1">
+          <code class="text-xs">https://discord.com/channels/722131463138705510/1063020750472237106/1063020750472237106
+          </code>
+        </div>
       </div>
 
     </Layout>
