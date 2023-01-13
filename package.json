@@ -35,6 +35,7 @@
     "solid-start": "^0.2.11",
     "solid-start-trpc": "^0.0.16",
     "solid-trpc": "^0.1.0-ssr.1",
+    "solidstart-17": "file:",
     "undici": "5.11.0",
     "zod": "^3.19.1"
   },

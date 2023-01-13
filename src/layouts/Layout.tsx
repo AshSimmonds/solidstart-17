@@ -51,7 +51,7 @@ function NavbarStart() {
 
             </div>
 
-            <A href="/" ><img src={`https://start.solidjs.com/logo.svg`} alt="SolidJS logo" class="max-h-12 max-w-36 cursor-pointer" /></A>
+            <A href="/" ><img src="https://start.solidjs.com/logo.svg" alt="SolidJS logo" class="max-h-12 max-w-36 cursor-pointer" /></A>
 
         </div>
     )
