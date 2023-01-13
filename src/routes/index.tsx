@@ -86,42 +86,46 @@ const Home: VoidComponent = () => {
       <h1>SolidStart SSR | Solid @tanstack/query v5</h1>
       <h2>Testing createQuery(fetch) in route vs tRPC</h2>
 
-      <CheckboxShowHide showWhat='background details and problems' showByDefault={true} >
+      <div class="bg-base-100 p-4 mt-4 mb-4" >
 
-        <div class="bg-base-100 p-4 mt-4 mb-4" >
+        <h3 class="mt-0">Current problem - hydration issues <a href="https://github.com/AshSimmonds/solidstart-17/issues/1" class="text-xs btn-sm btn-warning btn-outline" target="_blank">github issue</a></h3>
 
-          <h3 class="mt-0">Current problem - hydration issues <a href="https://github.com/AshSimmonds/solidstart-17/issues/1" class="text-xs btn-sm btn-warning btn-outline" target="_blank">github issue</a></h3>
+        <CheckboxShowHide showWhat='background details and problems' >
 
-          setting <code>ssr: true</code> in <a href="https://github.com/AshSimmonds/solidstart-17/blob/main/vite.config.ts" target="_blank">vite.config.ts</a>
+          <div class="mt-8">
 
-          <pre>
-            <ul  >
-              <li>several second delay before rendering</li>
-              <li>some elements don't render</li>
-              <li>bunch of DOM hydration warnings in the dev console</li>
-              <li>clicking <code>prev</code> and <code>next</code> buttons jumps to top of page</li>
-              <li>harsh page flash on fetching new data</li>
-            </ul>
-          </pre>
+            setting <code>ssr: true</code> in <a href="https://github.com/AshSimmonds/solidstart-17/blob/main/vite.config.ts" target="_blank">vite.config.ts</a>
 
-          <div class="text-center mx-auto w-2/3 min-h-48 mt-4 ">
-            Try going to <a href="/blank">blank page</a> then back here to see full render
+            <pre>
+              <ul  >
+                <li>several second delay before rendering</li>
+                <li>some elements don't render</li>
+                <li>bunch of DOM hydration warnings in the dev console</li>
+                <li>clicking <code>prev</code> and <code>next</code> buttons jumps to top of page</li>
+                <li>harsh page flash on fetching new data</li>
+              </ul>
+            </pre>
+
+            <div class="text-center mx-auto w-2/3 min-h-48 mt-4 ">
+              Try going to <a href="/blank">blank page</a> then back here to see full render
+            </div>
+
+            <h3>Resources:</h3>
+            Iterating on conversations on Twitter here:
+            <div class="mt-1 mb-4">
+              <code class="text-xs">https://twitter.com/aryan__deora/status/1613564289180213249</code>
+            </div>
+
+            And on Discord here:
+
+            <div class="mt-1">
+              <code class="text-xs">https://discord.com/channels/722131463138705510/1063020750472237106/1063020750472237106
+              </code>
+            </div>
           </div>
+        </CheckboxShowHide>
 
-          <h3>Resources:</h3>
-          Iterating on conversations on Twitter here:
-          <div class="mt-1 mb-4">
-            <code class="text-xs">https://twitter.com/aryan__deora/status/1613564289180213249</code>
-          </div>
-
-          And on Discord here:
-
-          <div class="mt-1">
-            <code class="text-xs">https://discord.com/channels/722131463138705510/1063020750472237106/1063020750472237106
-            </code>
-          </div>
-        </div>
-      </CheckboxShowHide>
+      </div>
 
       <div class="text-center mx-auto w-1/2 mt-8 mb-8">
         <button class="btn btn-secondary btn-outline"
@@ -152,7 +156,7 @@ const Home: VoidComponent = () => {
                 title="Embedded in route"
                 subtitle={`${post.title}`}
                 summary={`ID: ${post.id} - https://jsonplaceholder.typicode.com/posts/${post.id}`}
-                icon={<img src="https://avatars.githubusercontent.com/u/72518640" class="w-16" />}
+                icon={<img src="https://avatars.githubusercontent.com/u/72518640" class="w-12 mx-2" />}
               >
                 {post.body}
               </XCOMOperationBriefing>
@@ -180,7 +184,7 @@ const Home: VoidComponent = () => {
                 subtitle={`${post.title}`}
                 summary={`ID: ${post.id} - https://jsonplaceholder.typicode.com/posts/${post.id}`}
                 class="mt-16"
-                icon={<img src="https://avatars.githubusercontent.com/u/78011399" class="w-16" />}
+                icon={<img src="https://avatars.githubusercontent.com/u/78011399" class="w-12 mx-2" />}
               >
                 {post.body}
               </XCOMOperationBriefing>
