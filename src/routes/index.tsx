@@ -4,6 +4,7 @@ import type { VoidComponent } from "solid-js";
 import { createSignal, For, Suspense } from "solid-js";
 import { Title } from "solid-start"
 import server$ from "solid-start/server"
+import CheckboxShowHide from '~/components/CheckboxShowHide';
 import Layout from "~/layouts/Layout"
 import { trpc } from "~/utils/trpc";
 
@@ -64,9 +65,9 @@ const Home: VoidComponent = () => {
       // ###########################
 
       const response = exampleRouter.jsonplaceholder
-      .fetch({
-        id: postId() + 1,
-      })
+        .fetch({
+          id: postId() + 1,
+        })
 
       // const response = trpc.exampleRouter.jsonplaceholder
       //   .useQuery(() => ({
@@ -109,7 +110,7 @@ const Home: VoidComponent = () => {
 
       <h2>query embedded in route</h2>
 
-      <div class="text-center mx-auto w-2/3 h-48 ">
+      <div class="text-center mx-auto w-2/3 min-h-48 ">
 
         <Suspense>
           <For each={queryInRoute.data}>
@@ -125,12 +126,20 @@ const Home: VoidComponent = () => {
             )}
           </For>
         </Suspense>
+
+        <div class="text-left" >
+          <CheckboxShowHide showWhat='metadata'>
+            <pre >
+              {JSON.stringify(queryInRoute, null, 2)}
+            </pre>
+          </CheckboxShowHide>
+        </div>
       </div>
 
 
       <h2>query via tRPC</h2>
 
-      <div class="text-center mx-auto w-2/3 h-48 ">
+      <div class="text-center mx-auto w-2/3 min-h-48 ">
 
         <Suspense>
           <For each={queryViaTrpc.data}>
@@ -146,12 +155,16 @@ const Home: VoidComponent = () => {
             )}
           </For>
         </Suspense>
+        <div class="text-left" >
+          <CheckboxShowHide showWhat='metadata'>
+            <pre >
+              {JSON.stringify(queryViaTrpc, null, 2)}
+            </pre>
+          </CheckboxShowHide>
+        </div>
       </div>
 
 
-      <pre class="hidden">
-        {JSON.stringify(queryInRoute, null, 2)}
-      </pre>
 
       <div class="bg-base-100 p-4 mt-12" >
         Iterating on conversations on Twitter here:

@@ -30,6 +30,8 @@
     "@tanstack/solid-query": "https://pkg.csb.dev/TanStack/query/commit/f080a144/@tanstack/solid-query",
     "@trpc/client": "^10.1.0",
     "@trpc/server": "^10.1.0",
+    "@zag-js/checkbox": "^0.2.7",
+    "@zag-js/solid": "^0.2.4",
     "daisyui": "^2.46.1",
     "solid-js": "^1.6.2",
     "solid-start": "^0.2.11",
