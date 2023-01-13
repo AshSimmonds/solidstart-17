@@ -88,7 +88,7 @@ const Home: VoidComponent = () => {
 
       <div class="bg-base-100 p-4 mt-4 mb-4" >
 
-        <h3 class="mt-0">Current problem - hydration issues <a href="https://github.com/AshSimmonds/solidstart-17/issues/1" class="text-xs btn-sm btn-warning btn-outline" target="_blank">github issue</a></h3>
+        <h3 class="mt-0">Current problems <a href="https://github.com/AshSimmonds/solidstart-17/issues/1" class="text-xs btn-sm btn-warning btn-outline" target="_blank">github issue</a></h3>
 
         <CheckboxShowHide showWhat='background details and problems' >
 
@@ -99,6 +99,7 @@ const Home: VoidComponent = () => {
             <pre>
               <ul  >
                 <li>several second delay before rendering</li>
+                <li>getting <code>serverless function has crashed</code> on Vercel occasionally</li>
                 <li>some elements don't render</li>
                 <li>bunch of DOM hydration warnings in the dev console</li>
                 <li>clicking <code>prev</code> and <code>next</code> buttons jumps to top of page</li>
@@ -147,7 +148,7 @@ const Home: VoidComponent = () => {
 
 
 
-      <div class="mx-auto w-2/3 min-h-48 ">
+      <div class="mx-auto md:w-2/3 min-h-48 ">
 
         <Suspense>
           <For each={queryInRoute.data}>
@@ -174,7 +175,7 @@ const Home: VoidComponent = () => {
       </div>
 
 
-      <div class="mx-auto w-2/3 min-h-48 ">
+      <div class="mx-auto md:w-2/3 min-h-48 ">
 
         <Suspense>
           <For each={queryViaTrpc.data}>
