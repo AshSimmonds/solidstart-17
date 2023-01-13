@@ -14,9 +14,9 @@ import {
   Scripts,
   Title,
 } from "solid-start";
-import { trpc, client, queryClient } from "~/utils/trpc";
-// import { QueryClient, QueryClientProvider } from '@tanstack/solid-query';
-import { QueryClient, QueryClientProvider } from '@adeora/solid-query';
+// import { trpc, client, queryClient } from "~/utils/trpc";
+import { QueryClient, QueryClientProvider } from '@tanstack/solid-query';
+// import { QueryClient, QueryClientProvider } from '@adeora/solid-query';
 
 export default function Root() {
   const queryClient = new QueryClient({
@@ -73,11 +73,11 @@ export default function Root() {
       <Body>
         <QueryClientProvider client={queryClient}>
           <ErrorBoundary>
-            {/* <Suspense fallback={<div>Loading...</div>}> */}
+            <Suspense fallback={<div>Loading...</div>}>
               <Routes>
                 <FileRoutes />
               </Routes>
-            {/* </Suspense> */}
+            </Suspense>
           </ErrorBoundary>
         </QueryClientProvider>
         <Scripts />

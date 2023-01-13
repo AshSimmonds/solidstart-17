@@ -1,6 +1,7 @@
-import { createQuery, useQueryClient } from '@adeora/solid-query';
-// import { createQuery, useQueryClient } from "@tanstack/solid-query";
+// import { createQuery, useQueryClient } from '@adeora/solid-query';
+import { createQuery } from "@tanstack/solid-query";
 import type { VoidComponent } from "solid-js";
+import { Show } from "solid-js";
 import { createSignal, For, Suspense } from "solid-js";
 import { Title } from "solid-start"
 import server$ from "solid-start/server"
@@ -33,7 +34,6 @@ interface PostData {
 
 const Home: VoidComponent = () => {
 
-
   const clientMessage = clientGday('dude')
   const serverMessage = serverGday('sweet')
 
@@ -58,25 +58,20 @@ const Home: VoidComponent = () => {
     queryKey: ["postsInTrpc", postId()],
     queryFn: async () => {
 
-      // ###########################
-      //
-      // WHAT AM I DOING WRONG HERE?
-      //
-      // ###########################
-
       const response = exampleRouter.jsonplaceholder
         .fetch({
           id: postId() + 1,
         })
 
-      // const response = trpc.exampleRouter.jsonplaceholder
+        
+      // this method returns the data as a subset of it's own data
+
+      // const response = await trpc.exampleRouter.jsonplaceholder
       //   .useQuery(() => ({
       //     id: postId() + 1,
       //   }))
 
-      console.log(`index.tsx queryViaTrpc response`, response)
-
-      return response //as JsonplaceholderPostData[];
+      return response
     },
   }));
 
@@ -85,9 +80,22 @@ const Home: VoidComponent = () => {
 
   return (
     <Layout hideHeader='' hideFooter=''>
-      <Title>SolidStart | Solid @tanstack/query v5 | tRPC</Title>
-      <h1>SolidStart | Solid @tanstack/query v5 | tRPC</h1>
+      <Title>SolidStart SSR | Solid @tanstack/query v5 | tRPC</Title>
+      <h1>SolidStart SSR | Solid @tanstack/query v5 | tRPC</h1>
 
+      <div class="bg-base-100 p-4 mt-4 mb-4" >
+        Iterating on conversations on Twitter here:
+        <div class="mt-1 mb-4">
+          <code class="text-xs">https://twitter.com/aryan__deora/status/1613564289180213249</code>
+        </div>
+
+        And on Discord here:
+
+        <div class="mt-1">
+          <code class="text-xs">https://discord.com/channels/722131463138705510/1063020750472237106/1063020750472237106
+          </code>
+        </div>
+      </div>
 
       <div class="text-center mx-auto w-1/2 ">
         <button class="btn btn-sm btn-secondary btn-outline"
@@ -161,22 +169,6 @@ const Home: VoidComponent = () => {
               {JSON.stringify(queryViaTrpc, null, 2)}
             </pre>
           </CheckboxShowHide>
-        </div>
-      </div>
-
-
-
-      <div class="bg-base-100 p-4 mt-12" >
-        Iterating on conversations on Twitter here:
-        <div class="mt-1 mb-4">
-          <code class="text-xs">https://twitter.com/aryan__deora/status/1613564289180213249</code>
-        </div>
-
-        And on Discord here:
-
-        <div class="mt-1">
-          <code class="text-xs">https://discord.com/channels/722131463138705510/1063020750472237106/1063020750472237106
-          </code>
         </div>
       </div>
 

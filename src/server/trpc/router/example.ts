@@ -1,6 +1,13 @@
 import { z } from "zod";
 import { procedure, router } from "../utils";
 
+interface PostData {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+}
+
 export default router({
   hello: procedure.input(z.object({ name: z.string() })).query(({ input }) => {
     return `Hello ${input.name}`;
@@ -15,14 +22,14 @@ export default router({
     .input(z.object({ id: z.number() }))
     .query(async ({ input }) => {
 
-      console.log(`trpc jsonplaceholder input`, JSON.stringify(input, null, 4))
+      // console.log(`trpc jsonplaceholder input`, JSON.stringify(input, null, 4))
 
-      const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${input.id}`)
+      const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${input.id}`)
         .then((res) => res.json())
 
       console.log(`trpc jsonplaceholder response`, JSON.stringify(response, null, 4))
 
-      return response;
+      return [response] as PostData[];
     }
     ),
 

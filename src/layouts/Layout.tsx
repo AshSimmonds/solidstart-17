@@ -73,7 +73,7 @@ function NavbarEnd() {
     return (
         <div class="navbar-end">
             <A href="/profile" class="btn btn-circle btn-accent">
-                <Avatar />
+                {/* <Avatar /> */}
             </A>
         </div>
     )
