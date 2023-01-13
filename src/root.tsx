@@ -16,6 +16,7 @@ import {
 } from "solid-start";
 import { trpc, client, queryClient } from "~/utils/trpc";
 import { QueryClient, QueryClientProvider } from '@tanstack/solid-query';
+// import { QueryClient, QueryClientProvider } from '@adeora/solid-query';
 
 export default function Root() {
   const queryClient = new QueryClient({
