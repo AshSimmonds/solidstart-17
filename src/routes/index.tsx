@@ -63,7 +63,7 @@ const Home: VoidComponent = () => {
           id: postId() + 1,
         })
 
-        
+
       // this method returns the data as a subset of it's own data
 
       // const response = await trpc.exampleRouter.jsonplaceholder
@@ -84,6 +84,12 @@ const Home: VoidComponent = () => {
       <h1>SolidStart SSR | Solid @tanstack/query v5 | tRPC</h1>
 
       <div class="bg-base-100 p-4 mt-4 mb-4" >
+
+        <h3 class="mt-0">Current problem <a href="https://github.com/AshSimmonds/solidstart-17/issues/1" class="text-xs btn-sm btn-warning btn-outline" target="_blank">github issue</a></h3>
+
+        setting <code>ssr: true</code> in <a href="https://github.com/AshSimmonds/solidstart-17/blob/main/vite.config.ts" target="_blank">vite.config.ts</a> makes a several second delay before rendering, some elements don't render, and there's a bunch of DOM hydration warnings in the dev console
+
+        <h3>Resources:</h3>
         Iterating on conversations on Twitter here:
         <div class="mt-1 mb-4">
           <code class="text-xs">https://twitter.com/aryan__deora/status/1613564289180213249</code>
@@ -105,7 +111,7 @@ const Home: VoidComponent = () => {
         >
           Previous Page
         </button>
-        <button class="btn btn-sm btn-accent btn-outline"
+        <button class="btn btn-sm btn-secondary btn-outline"
           onClick={() => {
             setPostId((id) => (id === 100 ? 100 : id + 1));
           }}
