@@ -60,7 +60,8 @@ const Home: VoidComponent = () => {
         </h3>
 
         <CheckboxShowHide showWhat="background details and problems">
-          <div class="mt-8">
+          <h4>PR's welcome.</h4>
+          <div class="mt-8 text-xl">
             <pre>
               <ul>
                 <li><s>several second delay before rendering</s></li>
@@ -82,13 +83,21 @@ const Home: VoidComponent = () => {
                   src="https://cdn-icons-png.flaticon.com/512/5968/5968866.png"
                   class="w-6 float-left mr-2"
                 /> first <code>next</code> button click does nothing</a></li>
+                <li><a href="https://github.com/AshSimmonds/solidstart-17/issues/10" target="_blank"><img
+                  src="https://cdn-icons-png.flaticon.com/512/5968/5968866.png"
+                  class="w-6 float-left mr-2"
+                /> doesn't register <code>prev</code> button after a few <code>next</code> clicks</a></li>
+                <li><a href="https://github.com/AshSimmonds/solidstart-17/issues/11" target="_blank"><img
+                  src="https://cdn-icons-png.flaticon.com/512/5968/5968866.png"
+                  class="w-6 float-left mr-2"
+                /> tRPC doesn't show latest when clicking through fast</a></li>
               </ul>
             </pre>
-            <h3>Resources:</h3>
+            <h3>Contact channels:</h3>
             Iterating on conversations on Twitter here:
             <div class="mt-1 mb-4">
               <code class="text-xs">
-                https://twitter.com/aryan__deora/status/1613564289180213249
+                https://twitter.com/BlueDwarfAsh/status/1613866577971277824
               </code>
             </div>
             And on Discord here:
