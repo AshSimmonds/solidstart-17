@@ -4,7 +4,8 @@ import * as checkbox from "@zag-js/checkbox"
 import { normalizeProps, useMachine } from "@zag-js/solid"
 
 interface CheckboxShowHideProps {
-    showWhat?: string, 
+    showWhat?: string,
+    showByDefault?: boolean,
     children: JSX.Element
 }
 
@@ -12,6 +13,10 @@ const CheckboxShowHide: Component<CheckboxShowHideProps> = (props) => {
     const [state, send] = useMachine(checkbox.machine({ id: createUniqueId() }))
 
     const api = createMemo(() => checkbox.connect(state, send, normalizeProps))
+
+    if (props.showByDefault) {
+        api().setChecked(true)
+    }
 
     return (
         <>

@@ -7,6 +7,7 @@ import { Title } from "solid-start";
 // import { A, Title } from "solid-start"
 import server$ from "solid-start/server"
 import CheckboxShowHide from '~/components/CheckboxShowHide';
+import XCOMOperationBriefing from "~/components/XCOMOperationBriefing";
 import Layout from "~/layouts/Layout"
 import { trpc } from "~/utils/trpc";
 
@@ -69,7 +70,7 @@ const Home: VoidComponent = () => {
 
       // const response = await trpc.exampleRouter.jsonplaceholder
       //   .useQuery(() => ({
-      //     id: postId() + 1,
+      //     id: 100 - postId(),
       //   }))
 
       return response
@@ -81,42 +82,56 @@ const Home: VoidComponent = () => {
 
   return (
     <Layout hideHeader='' hideFooter=''>
-      <Title>SolidStart SSR | Solid @tanstack/query v5 | tRPC</Title>
-      <h1>SolidStart SSR | Solid @tanstack/query v5 | tRPC</h1>
+      <Title>SolidStart SSR | Solid @tanstack/query v5 test | tRPC</Title>
+      <h1>SolidStart SSR | Solid @tanstack/query v5</h1>
+      <h2>Testing createQuery(fetch) in route vs tRPC</h2>
 
-      <div class="bg-base-100 p-4 mt-4 mb-4" >
+      <CheckboxShowHide showWhat='background details and problems' showByDefault={true} >
 
-        <h3 class="mt-0">Current problem - hydration issues <a href="https://github.com/AshSimmonds/solidstart-17/issues/1" class="text-xs btn-sm btn-warning btn-outline" target="_blank">github issue</a></h3>
+        <div class="bg-base-100 p-4 mt-4 mb-4" >
 
-        setting <code>ssr: true</code> in <a href="https://github.com/AshSimmonds/solidstart-17/blob/main/vite.config.ts" target="_blank">vite.config.ts</a> makes a several second delay before rendering, some elements don't render, and there's a bunch of DOM hydration warnings in the dev console.
+          <h3 class="mt-0">Current problem - hydration issues <a href="https://github.com/AshSimmonds/solidstart-17/issues/1" class="text-xs btn-sm btn-warning btn-outline" target="_blank">github issue</a></h3>
 
-        <div class="text-center mx-auto w-2/3 min-h-48 mt-4 ">
-          Try going to <a href="/blank">blank page</a> then back here to see full render
+          setting <code>ssr: true</code> in <a href="https://github.com/AshSimmonds/solidstart-17/blob/main/vite.config.ts" target="_blank">vite.config.ts</a>
+
+          <pre>
+            <ul  >
+              <li>several second delay before rendering</li>
+              <li>some elements don't render</li>
+              <li>bunch of DOM hydration warnings in the dev console</li>
+              <li>clicking <code>prev</code> and <code>next</code> buttons jumps to top of page</li>
+              <li>harsh page flash on fetching new data</li>
+            </ul>
+          </pre>
+
+          <div class="text-center mx-auto w-2/3 min-h-48 mt-4 ">
+            Try going to <a href="/blank">blank page</a> then back here to see full render
+          </div>
+
+          <h3>Resources:</h3>
+          Iterating on conversations on Twitter here:
+          <div class="mt-1 mb-4">
+            <code class="text-xs">https://twitter.com/aryan__deora/status/1613564289180213249</code>
+          </div>
+
+          And on Discord here:
+
+          <div class="mt-1">
+            <code class="text-xs">https://discord.com/channels/722131463138705510/1063020750472237106/1063020750472237106
+            </code>
+          </div>
         </div>
+      </CheckboxShowHide>
 
-        <h3>Resources:</h3>
-        Iterating on conversations on Twitter here:
-        <div class="mt-1 mb-4">
-          <code class="text-xs">https://twitter.com/aryan__deora/status/1613564289180213249</code>
-        </div>
-
-        And on Discord here:
-
-        <div class="mt-1">
-          <code class="text-xs">https://discord.com/channels/722131463138705510/1063020750472237106/1063020750472237106
-          </code>
-        </div>
-      </div>
-
-      <div class="text-center mx-auto w-1/2 ">
-        <button class="btn btn-sm btn-secondary btn-outline"
+      <div class="text-center mx-auto w-1/2 mt-8 mb-8">
+        <button class="btn btn-secondary btn-outline"
           onClick={() => {
             setPostId((id) => (id === 1 ? 1 : id - 1));
           }}
         >
           Previous Page
         </button>
-        <button class="btn btn-sm btn-secondary btn-outline"
+        <button class="btn btn-secondary btn-outline"
           onClick={() => {
             setPostId((id) => (id === 100 ? 100 : id + 1));
           }}
@@ -127,21 +142,20 @@ const Home: VoidComponent = () => {
 
 
 
-      <h2>query embedded in route</h2>
 
-      <div class="text-center mx-auto w-2/3 min-h-48 ">
+      <div class="mx-auto w-2/3 min-h-48 ">
 
         <Suspense>
           <For each={queryInRoute.data}>
             {(post) => (
-              <div>
-                <h3>ID: {post.id} - {post.title}</h3>
-                <p>{post.body}</p>
-                <code class="mt-4 text-xs">https://jsonplaceholder.typicode.com/posts/{post.id}</code>
-                <pre class="hidden">
-                  {JSON.stringify(post, null, 2)}
-                </pre>
-              </div>
+              <XCOMOperationBriefing
+                title="Embedded in route"
+                subtitle={`${post.title}`}
+                summary={`ID: ${post.id} - https://jsonplaceholder.typicode.com/posts/${post.id}`}
+                icon={<img src="https://avatars.githubusercontent.com/u/72518640" class="w-16" />}
+              >
+                {post.body}
+              </XCOMOperationBriefing>
             )}
           </For>
         </Suspense>
@@ -156,21 +170,20 @@ const Home: VoidComponent = () => {
       </div>
 
 
-      <h2>query via tRPC</h2>
-
-      <div class="text-center mx-auto w-2/3 min-h-48 ">
+      <div class="mx-auto w-2/3 min-h-48 ">
 
         <Suspense>
           <For each={queryViaTrpc.data}>
             {(post) => (
-              <div>
-                <h3>ID: {post.id} - {post.title}</h3>
-                <p>{post.body}</p>
-                <code class="mt-4 text-xs">https://jsonplaceholder.typicode.com/posts/{post.id}</code>
-                <pre class="hidden">
-                  {JSON.stringify(post, null, 2)}
-                </pre>
-              </div>
+              <XCOMOperationBriefing
+                title="via tRPC"
+                subtitle={`${post.title}`}
+                summary={`ID: ${post.id} - https://jsonplaceholder.typicode.com/posts/${post.id}`}
+                class="mt-16"
+                icon={<img src="https://avatars.githubusercontent.com/u/78011399" class="w-16" />}
+              >
+                {post.body}
+              </XCOMOperationBriefing>
             )}
           </For>
         </Suspense>
