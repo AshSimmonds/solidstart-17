@@ -61,33 +61,29 @@ const Home: VoidComponent = () => {
 
         <CheckboxShowHide showWhat="background details and problems">
           <div class="mt-8">
-            setting <code>ssr: true</code> in{" "}
-            <a
-              href="https://github.com/AshSimmonds/solidstart-17/blob/main/vite.config.ts"
-              target="_blank"
-            >
-              vite.config.ts
-            </a>
             <pre>
               <ul>
-                <li>several second delay before rendering</li>
+                <li><s>several second delay before rendering</s></li>
                 <li>
-                  getting <code>serverless function has crashed</code> on Vercel
-                  occasionally
+                  <s>getting <code>serverless function has crashed</code> on Vercel
+                    occasionally</s>
                 </li>
-                <li>some elements don't render</li>
-                <li>bunch of DOM hydration warnings in the dev console</li>
+                <li><s>some elements don't render</s></li>
+                <li><a href="https://github.com/AshSimmonds/solidstart-17/issues/4" target="_blank"><img
+                  src="https://cdn-icons-png.flaticon.com/512/5968/5968866.png"
+                  class="w-6 float-left mr-2"
+                /><s>bunch of</s> some DOM hydration warnings in the dev console</a></li>
                 <li>
-                  clicking <code>prev</code> and <code>next</code> buttons jumps
-                  to top of page
+                  <s>clicking <code>prev</code> and <code>next</code> buttons jumps
+                    to top of page</s>
                 </li>
-                <li>harsh page flash on fetching new data</li>
+                <li><s>harsh page flash on fetching new data</s></li>
+                <li><a href="https://github.com/AshSimmonds/solidstart-17/issues/9" target="_blank"><img
+                  src="https://cdn-icons-png.flaticon.com/512/5968/5968866.png"
+                  class="w-6 float-left mr-2"
+                /> first <code>next</code> button click does nothing</a></li>
               </ul>
             </pre>
-            <div class="text-center mx-auto w-2/3 min-h-48 mt-4 ">
-              Try going to <a href="/blank">blank page</a> then back here to see
-              full render
-            </div>
             <h3>Resources:</h3>
             Iterating on conversations on Twitter here:
             <div class="mt-1 mb-4">
