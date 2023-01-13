@@ -86,21 +86,12 @@ function HeaderLinks(props: any) {
 
         <ul tabIndex={0} class={props.listClass} >
             <li><A href="/">Home</A></li>
-            <li><A href="/video">Videos</A></li>
-            <li><A href="/tag">Tags</A></li>
-            <li><A href="/plan">Plan</A></li>
             <li tabIndex={0}>
                 <A href="/">
                     Dropdown
                 </A>
                 <ul class="p-2 bg-base-100">
-                    <li><A href="/plan">My Plan</A></li>
-                    <li><A href="/video">Videos</A></li>
-                    <li><A href="/tag">Tags</A></li>
-                    <li><A href="/protected">Protected</A></li>
-                    <li><A href="/typography">Typography</A></li>
                     <li><A href="/blank">Empty page</A></li>
-                    <li><A href="/modular-forms-special">Modular forms special test</A></li>
                 </ul>
             </li>
         </ul>
