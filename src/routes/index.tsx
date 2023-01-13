@@ -1,9 +1,10 @@
 // import { createQuery, useQueryClient } from '@adeora/solid-query';
 import { createQuery } from "@tanstack/solid-query";
 import type { VoidComponent } from "solid-js";
-import { Show } from "solid-js";
+// import { Show } from "solid-js";
 import { createSignal, For, Suspense } from "solid-js";
-import { Title } from "solid-start"
+import { Title } from "solid-start";
+// import { A, Title } from "solid-start"
 import server$ from "solid-start/server"
 import CheckboxShowHide from '~/components/CheckboxShowHide';
 import Layout from "~/layouts/Layout"
@@ -60,7 +61,7 @@ const Home: VoidComponent = () => {
 
       const response = exampleRouter.jsonplaceholder
         .fetch({
-          id: postId() + 1,
+          id: 100 - postId(),
         })
 
 
@@ -85,9 +86,13 @@ const Home: VoidComponent = () => {
 
       <div class="bg-base-100 p-4 mt-4 mb-4" >
 
-        <h3 class="mt-0">Current problem <a href="https://github.com/AshSimmonds/solidstart-17/issues/1" class="text-xs btn-sm btn-warning btn-outline" target="_blank">github issue</a></h3>
+        <h3 class="mt-0">Current problem - hydration issues <a href="https://github.com/AshSimmonds/solidstart-17/issues/1" class="text-xs btn-sm btn-warning btn-outline" target="_blank">github issue</a></h3>
 
-        setting <code>ssr: true</code> in <a href="https://github.com/AshSimmonds/solidstart-17/blob/main/vite.config.ts" target="_blank">vite.config.ts</a> makes a several second delay before rendering, some elements don't render, and there's a bunch of DOM hydration warnings in the dev console
+        setting <code>ssr: true</code> in <a href="https://github.com/AshSimmonds/solidstart-17/blob/main/vite.config.ts" target="_blank">vite.config.ts</a> makes a several second delay before rendering, some elements don't render, and there's a bunch of DOM hydration warnings in the dev console.
+
+        <div class="text-center mx-auto w-2/3 min-h-48 mt-4 ">
+          Try going to <a href="/blank">blank page</a> then back here to see full render
+        </div>
 
         <h3>Resources:</h3>
         Iterating on conversations on Twitter here:
