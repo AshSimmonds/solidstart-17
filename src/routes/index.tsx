@@ -112,24 +112,31 @@ const Home: VoidComponent = () => {
         </CheckboxShowHide>
       </div>
 
-      <div class="text-center mx-auto w-1/2 mt-8 mb-8">
+      <div class="text-center mx-auto w-1/2 mt-8 mb-8 flex justify-evenly gap-4">
         <Button.Root
           class="btn btn-secondary btn-outline"
           onPress={() => {
             setPostId((id) => (id === 1 ? 1 : id - 1));
           }}
         >
-          Previous Page
+          Prev
         </Button.Root>
+
+        <div class="text-3xl mt-4">
+          {postId()} / 100
+        </div>
+
         <Button.Root
           class="btn btn-secondary btn-outline"
           onPress={() => {
             setPostId((id) => (id === 100 ? 100 : id + 1));
           }}
         >
-          Next Page
+          Next
         </Button.Root>
       </div>
+
+
 
       <div class="mx-auto md:w-2/3 min-h-48 ">
         <Suspense>
