@@ -113,22 +113,22 @@ const Home: VoidComponent = () => {
       </div>
 
       <div class="text-center mx-auto w-1/2 mt-8 mb-8">
-        <Button
+        <Button.Root
           class="btn btn-secondary btn-outline"
           onPress={() => {
             setPostId((id) => (id === 1 ? 1 : id - 1));
           }}
         >
           Previous Page
-        </Button>
-        <Button
+        </Button.Root>
+        <Button.Root
           class="btn btn-secondary btn-outline"
           onPress={() => {
             setPostId((id) => (id === 100 ? 100 : id + 1));
           }}
         >
           Next Page
-        </Button>
+        </Button.Root>
       </div>
 
       <div class="mx-auto md:w-2/3 min-h-48 ">
