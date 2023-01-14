@@ -27,7 +27,7 @@ export default router({
       const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${input.id}`)
         .then((res) => res.json())
 
-      console.log(`\ntrpc jsonplaceholder response`, JSON.stringify(response, null, 4))
+      // console.log(`\ntrpc jsonplaceholder response`, JSON.stringify(response, null, 4))
 
       return [response] as PostData[];
     }
