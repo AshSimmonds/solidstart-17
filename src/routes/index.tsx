@@ -6,6 +6,7 @@ import CheckboxShowHide from "~/components/CheckboxShowHide";
 import XCOMOperationBriefing from "~/components/XCOMOperationBriefing";
 import Layout from "~/layouts/Layout";
 import { trpc } from "~/utils/trpc";
+import { Button } from "@kobalte/core";
 
 interface PostData {
   userId: number;
@@ -112,22 +113,22 @@ const Home: VoidComponent = () => {
       </div>
 
       <div class="text-center mx-auto w-1/2 mt-8 mb-8">
-        <button
+        <Button
           class="btn btn-secondary btn-outline"
-          onClick={() => {
+          onPress={() => {
             setPostId((id) => (id === 1 ? 1 : id - 1));
           }}
         >
           Previous Page
-        </button>
-        <button
+        </Button>
+        <Button
           class="btn btn-secondary btn-outline"
-          onClick={() => {
+          onPress={() => {
             setPostId((id) => (id === 100 ? 100 : id + 1));
           }}
         >
           Next Page
-        </button>
+        </Button>
       </div>
 
       <div class="mx-auto md:w-2/3 min-h-48 ">
