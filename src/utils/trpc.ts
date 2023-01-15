@@ -6,8 +6,8 @@ import { httpBatchLink } from "@trpc/client";
 const getBaseUrl = () => {
   if (typeof window !== "undefined") return "";
   if (process.env.NODE_ENV === "production")
-    return "https://solidstart-17-ssr-tanstack-trpc.vercel.app";
-  return `http://localhost:${process.env.PORT ?? 3000}`;
+    return "https://solidstart.g0.wtf";
+  return `http://localhost:${process.env.PORT ?? 5173}`;
 };
 
 export const trpc = createTRPCSolid<IAppRouter>();
