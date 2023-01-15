@@ -31,7 +31,7 @@ const Home: VoidComponent = () => {
 
   const queryViaTrpc = trpc.exampleRouter.jsonplaceholder.useQuery(
     () => ({
-      id: 100 - postId(),
+      id: 101 - postId(),
     }),
     () => ({
       keepPreviousData: true,
@@ -95,7 +95,7 @@ const Home: VoidComponent = () => {
                 <li><s>Reactivity: 'function should be passed to a tracked scope' warning</s></li>
               </ul>
             </pre>
-            <h3>Contact channels:</h3>
+            <h3>Further discussion:</h3>
             Iterating on conversations on Twitter here:
             <div class="mt-1 mb-4">
               <code class="text-xs">
@@ -111,8 +111,17 @@ const Home: VoidComponent = () => {
           </div>
         </CheckboxShowHide>
       </div>
-
+      
       <div class="text-center mx-auto w-1/2 mt-8 mb-8 flex justify-evenly gap-4">
+      <Button.Root
+          class="btn btn-secondary btn-outline"
+          onPress={() => {
+            setPostId(1);
+          }}
+        >
+          |◁
+        </Button.Root>
+
         <Button.Root
           class="btn btn-secondary btn-outline"
           onPress={() => {
@@ -133,6 +142,15 @@ const Home: VoidComponent = () => {
           }}
         >
           Next
+        </Button.Root>
+
+        <Button.Root
+          class="btn btn-secondary btn-outline"
+          onPress={() => {
+            setPostId(100);
+          }}
+        >
+          ▷|
         </Button.Root>
       </div>
 
