@@ -7,6 +7,7 @@ import XCOMOperationBriefing from "~/components/XCOMOperationBriefing";
 import Layout from "~/layouts/Layout";
 import { trpc } from "~/utils/trpc";
 import { Button } from "@kobalte/core";
+import { TextField } from "@kobalte/core";
 
 interface PostData {
   userId: number;
@@ -67,13 +68,19 @@ const Home: VoidComponent = () => {
         </Button.Root>
 
         <div class="text-3xl mt-4">
-          {postId()} / 100
+          <TextField.Root
+            value={postId().toString()}
+            onValueChange={setPostId}
+          ><TextField.Input
+              class="input input-primary w-16"
+            />
+          </TextField.Root>
         </div>
 
         <Button.Root
           class="btn btn-secondary btn-outline"
           onPress={() => {
-            setPostId((id) => (id === 100 ? 100 : id + 1));
+            setPostId((id) => (id > 99 ? 100 : id + 1));
           }}
         >
           Next
