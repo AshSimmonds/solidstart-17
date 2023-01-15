@@ -44,7 +44,118 @@ const Home: VoidComponent = () => {
       <h1>SolidStart SSR | Solid @tanstack/query v5</h1>
       <h2>Testing createQuery(fetch) in route vs tRPC</h2>
 
-      <div class="bg-base-100 p-4 mt-4 mb-4">
+
+
+
+      <div class="text-center mx-auto w-2/3 mt-8 mb-8 flex justify-evenly gap-4">
+        <Button.Root
+          class="btn btn-secondary btn-outline"
+          onPress={() => {
+            setPostId(1);
+          }}
+        >
+          |◁
+        </Button.Root>
+
+        <Button.Root
+          class="btn btn-secondary btn-outline"
+          onPress={() => {
+            setPostId((id) => (id === 1 ? 1 : id - 1));
+          }}
+        >
+          Prev
+        </Button.Root>
+
+        <div class="text-3xl mt-4">
+          {postId()} / 100
+        </div>
+
+        <Button.Root
+          class="btn btn-secondary btn-outline"
+          onPress={() => {
+            setPostId((id) => (id === 100 ? 100 : id + 1));
+          }}
+        >
+          Next
+        </Button.Root>
+
+        <Button.Root
+          class="btn btn-secondary btn-outline"
+          onPress={() => {
+            setPostId(100);
+          }}
+        >
+          ▷|
+        </Button.Root>
+      </div>
+
+
+      <div class="mx-auto w-full mt-8 flex justify-evenly gap-4">
+
+        <div class=" w-full ">
+          <Suspense>
+            <For each={queryInRoute.data}>
+              {(post) => (
+                <XCOMOperationBriefing
+                  title="Embedded in route"
+                  subtitle={`${post.title}`}
+                  summary={`ID: ${post.id} - https://jsonplaceholder.typicode.com/posts/${post.id}`}
+                  icon={
+                    <img
+                      src="https://avatars.githubusercontent.com/u/72518640"
+                      class="w-12 mx-2"
+                    />
+                  }
+                >
+                  {post.body}
+                </XCOMOperationBriefing>
+              )}
+            </For>
+          </Suspense>
+
+          <div class="text-left">
+            <CheckboxShowHide showWhat="metadata">
+              <pre>{JSON.stringify(queryInRoute, null, 2)}</pre>
+            </CheckboxShowHide>
+          </div>
+        </div>
+
+        <div class=" w-full ">
+          <Suspense>
+            <For each={queryViaTrpc.data}>
+              {(post) => (
+                <XCOMOperationBriefing
+                  title="via tRPC"
+                  subtitle={`${post.title}`}
+                  summary={`ID: ${post.id} - https://jsonplaceholder.typicode.com/posts/${post.id}`}
+                  class="mt-16"
+                  icon={
+                    <img
+                      src="https://avatars.githubusercontent.com/u/78011399"
+                      class="w-12 mx-2"
+                    />
+                  }
+                >
+                  {post.body}
+                </XCOMOperationBriefing>
+              )}
+            </For>
+          </Suspense>
+          <div class="text-left">
+            <CheckboxShowHide showWhat="metadata">
+              <pre>{JSON.stringify(queryViaTrpc, null, 2)}</pre>
+            </CheckboxShowHide>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+      <div class="bg-base-100 p-4 mt-12 mb-4">
         <h3 class="mt-0">
           Current problems{" "}
           <a
@@ -111,106 +222,7 @@ const Home: VoidComponent = () => {
           </div>
         </CheckboxShowHide>
       </div>
-      
-      <div class="text-center mx-auto w-1/2 mt-8 mb-8 flex justify-evenly gap-4">
-      <Button.Root
-          class="btn btn-secondary btn-outline"
-          onPress={() => {
-            setPostId(1);
-          }}
-        >
-          |◁
-        </Button.Root>
 
-        <Button.Root
-          class="btn btn-secondary btn-outline"
-          onPress={() => {
-            setPostId((id) => (id === 1 ? 1 : id - 1));
-          }}
-        >
-          Prev
-        </Button.Root>
-
-        <div class="text-3xl mt-4">
-          {postId()} / 100
-        </div>
-
-        <Button.Root
-          class="btn btn-secondary btn-outline"
-          onPress={() => {
-            setPostId((id) => (id === 100 ? 100 : id + 1));
-          }}
-        >
-          Next
-        </Button.Root>
-
-        <Button.Root
-          class="btn btn-secondary btn-outline"
-          onPress={() => {
-            setPostId(100);
-          }}
-        >
-          ▷|
-        </Button.Root>
-      </div>
-
-
-
-      <div class="mx-auto md:w-2/3 min-h-48 ">
-        <Suspense>
-          <For each={queryInRoute.data}>
-            {(post) => (
-              <XCOMOperationBriefing
-                title="Embedded in route"
-                subtitle={`${post.title}`}
-                summary={`ID: ${post.id} - https://jsonplaceholder.typicode.com/posts/${post.id}`}
-                icon={
-                  <img
-                    src="https://avatars.githubusercontent.com/u/72518640"
-                    class="w-12 mx-2"
-                  />
-                }
-              >
-                {post.body}
-              </XCOMOperationBriefing>
-            )}
-          </For>
-        </Suspense>
-
-        <div class="text-left">
-          <CheckboxShowHide showWhat="metadata">
-            <pre>{JSON.stringify(queryInRoute, null, 2)}</pre>
-          </CheckboxShowHide>
-        </div>
-      </div>
-
-      <div class="mx-auto md:w-2/3 min-h-48 ">
-        <Suspense>
-          <For each={queryViaTrpc.data}>
-            {(post) => (
-              <XCOMOperationBriefing
-                title="via tRPC"
-                subtitle={`${post.title}`}
-                summary={`ID: ${post.id} - https://jsonplaceholder.typicode.com/posts/${post.id}`}
-                class="mt-16"
-                icon={
-                  <img
-                    src="https://avatars.githubusercontent.com/u/78011399"
-                    class="w-12 mx-2"
-                  />
-                }
-              >
-                {post.body}
-              </XCOMOperationBriefing>
-            )}
-          </For>
-        </Suspense>
-        <div class="text-left">
-          <CheckboxShowHide showWhat="metadata">
-            <pre>{JSON.stringify(queryViaTrpc, null, 2)}</pre>
-          </CheckboxShowHide>
-        </div>
-      </div>
     </Layout>
   );
 };
