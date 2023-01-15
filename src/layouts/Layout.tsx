@@ -1,8 +1,15 @@
-import { A, Link } from "solid-start"
+import { A } from "solid-start"
 import Avatar from "../components/Avatar"
+import type { Component, JSX} from "solid-js";
 import { Show } from "solid-js"
 
-export default function Layout(props: any) {
+interface LayoutProps {
+    hideHeader?: string,
+    hideFooter?: string,
+    children: JSX.Element
+}
+
+const Layout: Component<LayoutProps> = (props) => {
     return (
         <>
             <Show when={!props.hideHeader}>
@@ -21,6 +28,9 @@ export default function Layout(props: any) {
         </>
     )
 }
+
+export default Layout
+
 
 
 function HeaderBar() {
@@ -73,14 +83,19 @@ function NavbarEnd() {
     return (
         <div class="navbar-end">
             <A href="/profile" class="btn btn-circle btn-accent">
-                {/* <Avatar /> */}
+                <Avatar />
             </A>
         </div>
     )
 }
 
 
-function HeaderLinks(props: any) {
+
+interface HeaderLinksProps {
+    listClass: string,
+}
+
+const HeaderLinks: Component<HeaderLinksProps> = (props) => {
 
     return (
 
@@ -92,6 +107,7 @@ function HeaderLinks(props: any) {
                 </A>
                 <ul class="p-2 bg-base-100">
                     <li><A href="/blank">Empty page</A></li>
+                    <li><A href="/typography">Typography</A></li>
                 </ul>
             </li>
         </ul>
