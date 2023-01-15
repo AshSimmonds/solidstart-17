@@ -151,31 +151,35 @@ const Home: VoidComponent = () => {
         <h3 class="mt-0">About this project </h3>
 
         <CheckboxShowHide showWhat="details">
-          <div>
+          <div class="mt-4 text-sm">
             This is basically just the personal SolidStart playground of Ash
             Simmonds, where I'll be randomly adding more pages of basic example
             implementations of things, some of which might be good reference
-            material (eventually) as a baseline for adding to other projects.
-          </div>
-          <div>
+            material (eventually) as a baseline for adding to other projects.<br />
+            <br />
             I generally make something "just work", note down the things that
             are buggy or could be improved into GitHub issues (and sometimes
             listed below directly), then later on when brain is idle come back
             and sort them out. Appreciate anyone else jumping in to do it their
             way.
           </div>
-          <a
-            href="https://github.com/AshSimmonds/solidstart-17/issues"
-            class="btn text-xs btn-sm btn-secondary btn-outline"
-            target="_blank"
-          >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/5968/5968866.png"
-              class="w-6 mr-2"
-            />{" "}
-            github issues
-          </a>
-          <h4 class="mt-8">PR's welcome.</h4>
+
+
+          <h4 class="mt-4">
+            <a
+              href="https://github.com/AshSimmonds/solidstart-17/issues"
+              class="btn text-xs btn-sm btn-secondary btn-outline mr-4"
+              target="_blank"
+            >
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/5968/5968866.png"
+                class="w-6 mr-2"
+              />{" "}
+              github issues
+            </a>
+            PR's welcome.
+          </h4>
+
           <div class="mt-8 text-xl">
             <pre>
               <ul>
@@ -231,7 +235,9 @@ const Home: VoidComponent = () => {
                 </li>
               </ul>
             </pre>
-            <h3>Further discussion:</h3>
+
+
+            <h3 class="mt-8">Further discussion:</h3>
 
             <div class="mt-1 mb-4">
               <a
