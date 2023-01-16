@@ -28,13 +28,13 @@ export default function Root() {
           name="twitter:image:src"
           content="https://pbs.twimg.com/profile_images/1487612657255739393/q5KUGVAt_400x400.jpg"
         />
-        <Meta name="twitter:site" content="@BlueDwarfAsh" />
-        <Meta name="twitter:card" content="summary_large_image" />
-        <Meta name="twitter:title" content="Ash Spacemonds" />
-        <Meta name="twitter:description" content="Ash Spacemonds" />
+        <Meta name="twitter:site" content="@nusquamu" />
+        <Meta name="twitter:card" content="summary" />
+        <Meta name="twitter:title" content="SolidStart Seventeen - a SolidJS playground" />
+        <Meta name="twitter:description" content="Just a little zen garden of ideas and tech tests in the little world of SolidStart." />
         <Meta
           property="og:image"
-          content="https://pbs.twimg.com/profile_images/1487612657255739393/q5KUGVAt_400x400.jpg"
+          content="https://user-images.githubusercontent.com/9034041/212753386-0671cc1a-105b-4596-a594-fee270f227e5.jpg"
         />
         <Meta property="og:image:alt" content="Ash Spacemonds" />
         <Meta property="og:image:width" content="1200" />
