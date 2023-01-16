@@ -1,5 +1,6 @@
 {
   "name": "solidstart-17",
+  "version": "0.2.1",
   "scripts": {
     "dev": "solid-start dev",
     "build": "solid-start build",

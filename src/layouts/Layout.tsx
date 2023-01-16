@@ -108,6 +108,7 @@ const HeaderLinks: Component<HeaderLinksProps> = (props) => {
                 <ul class="p-2 bg-base-100">
                     <li><A href="/blank">Empty page</A></li>
                     <li><A href="/typography">Typography</A></li>
+                    <li><A href="/showhide">Show/Hide toggles</A></li>
                 </ul>
             </li>
         </ul>
