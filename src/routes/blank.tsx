@@ -1,7 +1,8 @@
+import type { VoidComponent } from "solid-js"
 import { Title } from "solid-start"
 import Layout from "~/layouts/Layout"
 
-export default function BlankPage() {
+const BlankPage: VoidComponent = () => {
     return (
         <Layout>
             <Title>Blank</Title>
@@ -19,3 +20,5 @@ export default function BlankPage() {
         </Layout>
     )
 }
+
+export default BlankPage
