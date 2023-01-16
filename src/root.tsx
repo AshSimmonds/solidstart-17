@@ -26,7 +26,7 @@ export default function Root() {
 
         <Meta
           name="twitter:image:src"
-          content="https://pbs.twimg.com/profile_images/1487612657255739393/q5KUGVAt_400x400.jpg"
+          content="https://user-images.githubusercontent.com/9034041/212753386-0671cc1a-105b-4596-a594-fee270f227e5.jpg"
         />
         <Meta name="twitter:site" content="@nusquamu" />
         <Meta name="twitter:card" content="summary" />
@@ -36,10 +36,10 @@ export default function Root() {
           property="og:image"
           content="https://user-images.githubusercontent.com/9034041/212753386-0671cc1a-105b-4596-a594-fee270f227e5.jpg"
         />
-        <Meta property="og:image:alt" content="Ash Spacemonds" />
+        <Meta property="og:image:alt" content="SolidStart Seventeen" />
         <Meta property="og:image:width" content="1200" />
         <Meta property="og:image:height" content="600" />
-        <Meta property="og:site_name" content="Ash" />
+        <Meta property="og:site_name" content="SolidStart Seventeen - a SolidJS playground" />
 
         <Link rel="preconnect" href="https://api.fonts.coollabs.io" />
         <Link
