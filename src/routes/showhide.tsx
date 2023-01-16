@@ -61,6 +61,11 @@ const ShowHidePage: VoidComponent = () => {
                 class="mt-12"
             >
                 <p>TODO: write some stuff about what's good about Zag in this situation</p>
+
+                <a href="https://github.com/AshSimmonds/solidstart-17/issues/26" target="_blank" rel="noreferrer" class="btn btn-sm btn-ghost mt-8"><img
+                    src="https://cdn-icons-png.flaticon.com/512/5968/5968866.png"
+                    class="w-6 float-left mr-2"
+                /></a>
             </XCOMOperationBriefing>
 
             <XCOMOperationBriefing
@@ -69,6 +74,11 @@ const ShowHidePage: VoidComponent = () => {
                 class="mt-12"
             >
                 <p>TODO: write some stuff about what's good about Kobalte in this situation</p>
+
+                <a href="https://github.com/AshSimmonds/solidstart-17/issues/26" target="_blank" rel="noreferrer" class="btn btn-sm btn-ghost mt-8"><img
+                    src="https://cdn-icons-png.flaticon.com/512/5968/5968866.png"
+                    class="w-6 float-left mr-2"
+                /></a>
             </XCOMOperationBriefing>
 
 
