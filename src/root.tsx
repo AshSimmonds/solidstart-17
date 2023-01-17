@@ -66,6 +66,45 @@ export default function Root() {
 
 
 
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href="./fonts/montserrat-v25-latin-regular.woff2"
+          crossorigin="anonymous"
+        />
+
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href="./fonts/orbitron-v25-latin-600.woff2"
+          crossorigin="anonymous"
+        />
+
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href="./fonts/orbitron-v25-latin-regular.woff2"
+          crossorigin="anonymous"
+        />
+
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href="./fonts/rajdhani-v15-latin-regular.woff2"
+          crossorigin="anonymous"
+        />
+
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href="./fonts/vt323-v17-latin-regular.woff2"
+          crossorigin="anonymous"
+        />
 
 
 
