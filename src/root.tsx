@@ -94,7 +94,7 @@ export default function Root() {
           rel="preload"
           as="font"
           type="font/woff2"
-          href="./fonts/rajdhani-v15-latin-regular.woff2"
+          href="./fonts/rajdhani-v15-latin-600.woff2"
           crossorigin="anonymous"
         />
 
@@ -105,6 +105,8 @@ export default function Root() {
           href="./fonts/vt323-v17-latin-regular.woff2"
           crossorigin="anonymous"
         />
+
+
 
 
 
