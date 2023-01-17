@@ -41,7 +41,13 @@ export default function Root() {
         <Meta property="og:image:height" content="600" />
         <Meta property="og:site_name" content="SolidStart Seventeen - a SolidJS playground" />
 
-        <Link rel="preconnect" href="https://api.fonts.coollabs.io" />
+
+
+
+
+
+
+        {/* <Link rel="preconnect" href="https://api.fonts.coollabs.io" />
         <Link
           href="https://api.fonts.coollabs.io/css2?family=Montserrat&family=Rajdhani:wght@600&family=Orbitron:wght@600&family=VT323&display=swap"
           rel="stylesheet"
@@ -56,13 +62,23 @@ export default function Root() {
         <Link
           href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap"
           rel="stylesheet"
-        />
+        /> */}
+
+
+
+
+
 
         <Link
           rel="stylesheet"
           type="text/css"
           href="https://unpkg.com/augmented-ui@2/augmented-ui.min.css"
         />
+
+
+
+
+
       </Head>
       <Body>
         <trpc.Provider client={client} queryClient={queryClient}>
