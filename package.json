@@ -36,6 +36,7 @@
     "@zag-js/solid": "^0.2.5",
     "daisyui": "^2.47.0",
     "solid-js": "^1.6.9",
+    "solid-rewind": "^1.1.8",
     "solid-start": "^0.2.13",
     "solid-start-trpc": "^0.0.16",
     "solid-trpc": "^0.1.0-ssr.1",

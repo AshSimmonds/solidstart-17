@@ -8,6 +8,7 @@ import Layout from "~/layouts/Layout";
 import { trpc } from "~/utils/trpc";
 import { Button } from "@kobalte/core";
 import { TextField } from "@kobalte/core";
+import Rewind from 'solid-rewind';
 
 interface PostData {
   userId: number;
@@ -92,23 +93,25 @@ const Home: VoidComponent = () => {
       <div class="mx-auto w-full mt-8 flex justify-evenly gap-4">
         <div class=" w-full ">
           <Suspense>
-            <For each={queryInRoute.data}>
-              {(post) => (
-                <XCOMOperationBriefing
-                  title="Embedded in route"
-                  subtitle={`${post.title}`}
-                  summary={`ID: ${post.id} - https://jsonplaceholder.typicode.com/posts/${post.id}`}
-                  icon={
-                    <img
-                      src="https://avatars.githubusercontent.com/u/72518640"
-                      class="w-12 mx-2"
-                    />
-                  }
-                >
-                  {post.body}
-                </XCOMOperationBriefing>
-              )}
-            </For>
+            <Rewind>
+              <For each={queryInRoute.data}>
+                {(post) => (
+                  <XCOMOperationBriefing
+                    title="Embedded in route"
+                    subtitle={`${post.title}`}
+                    summary={`ID: ${post.id} - https://jsonplaceholder.typicode.com/posts/${post.id}`}
+                    icon={
+                      <img
+                        src="https://avatars.githubusercontent.com/u/72518640"
+                        class="w-12 mx-2"
+                      />
+                    }
+                  >
+                    {post.body}
+                  </XCOMOperationBriefing>
+                )}
+              </For>
+            </Rewind>
           </Suspense>
 
           <div class="text-left">
@@ -270,7 +273,8 @@ const Home: VoidComponent = () => {
           </div>
         </CheckboxShowHide>
       </div>
-    </Layout>
+
+    </Layout >
   );
 };
 
