@@ -11,6 +11,28 @@
     }
 } */
 
+/* orbitron-regular - latin */
+@font-face {
+    font-family: "Orbitron";
+    font-style: normal;
+    font-weight: 400;
+    src: local(""),
+        url("../fonts/orbitron-v25-latin-regular.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+            url("../fonts/orbitron-v25-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* orbitron-600 - latin */
+@font-face {
+    font-family: "Orbitron";
+    font-style: normal;
+    font-weight: 600;
+    src: local(""), url("../fonts/orbitron-v25-latin-600.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+            url("../fonts/orbitron-v25-latin-600.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+
+
 body {
     /* background-color: #020013; */
     background-color: #000a14;
@@ -29,7 +51,7 @@ body,
 
 .prose h1,
 h1 {
-    font-size: 2.0rem;
+    font-size: 2rem;
     margin-top: 0rem;
     margin-bottom: 1rem;
     font-weight: 800;
