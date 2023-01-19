@@ -5,27 +5,28 @@ import Layout from "~/layouts/Layout"
 import Modal from 'solid-dialog'
 
 const DialogPage: VoidComponent = () => {
-    const [modalIsOpen, setModalIsOpen] = createSignal(false);
-    const closeModal = () => setModalIsOpen(false);
+    const [modalBasicIsOpen, setModalBasicIsOpen] = createSignal(false);
+    const closeModalBasic = () => setModalBasicIsOpen(false);
 
     return (
         <Layout>
-            <Title>Dialog examples and testing</Title>
-            <h1>Dialog examples and testing</h1>
+            <Title>Dialog/modal examples and testing</Title>
+            <h1>Dialog/modal examples and testing</h1>
 
             <div class="text-center mx-auto ">
 
                 <button
                     type='button'
-                    onClick={() => setModalIsOpen(true)}
+                    onClick={() => setModalBasicIsOpen(true)}
+                    class='btn btn-primary text-2xl'
                 >
                     show modal
                 </button>
                 <Modal
-                    isShown={modalIsOpen()}
-                    closeModal={closeModal}
+                    isShown={modalBasicIsOpen()}
+                    closeModal={closeModalBasic}
                 >
-                    The modal is being displayed!
+                    May the blur be with you
                 </Modal>
             </div>
         </Layout>
