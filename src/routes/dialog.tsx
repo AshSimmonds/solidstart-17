@@ -1,8 +1,13 @@
-import type { VoidComponent } from "solid-js"
+import type { VoidComponent } from "solid-js";
+import { createSignal } from "solid-js"
 import { Title } from "solid-start"
 import Layout from "~/layouts/Layout"
+import Modal from 'solid-dialog'
 
 const DialogPage: VoidComponent = () => {
+    const [modalIsOpen, setModalIsOpen] = createSignal(false);
+    const closeModal = () => setModalIsOpen(false);
+
     return (
         <Layout>
             <Title>Dialog examples and testing</Title>
@@ -10,12 +15,18 @@ const DialogPage: VoidComponent = () => {
 
             <div class="text-center mx-auto ">
 
-                <h2>Centered stuff</h2>
-
-                <div>
-                    nothing to see here
-                </div>
-
+                <button
+                    type='button'
+                    onClick={() => setModalIsOpen(true)}
+                >
+                    show modal
+                </button>
+                <Modal
+                    isShown={modalIsOpen()}
+                    closeModal={closeModal}
+                >
+                    The modal is being displayed!
+                </Modal>
             </div>
         </Layout>
     )
