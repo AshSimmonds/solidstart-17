@@ -16,6 +16,9 @@ const DialogPage: VoidComponent = () => {
     const [modalStackIsOpen, setModalStackIsOpen] = createSignal(false)
     const closeModalStack = () => setModalStackIsOpen(false)
 
+    const [modalAboutIsOpen, setModalAboutIsOpen] = createSignal(false)
+    const closeModalAbout = () => setModalAboutIsOpen(false)
+
     return (
         <Layout>
             <Title>Dialog/modal examples and testing</Title>
@@ -73,7 +76,7 @@ const DialogPage: VoidComponent = () => {
                 <button
                     type='button'
                     onClick={() => setModalStackIsOpen(true)}
-                    class='btn btn-accent text-2xl'
+                    class='btn btn-error btn-outline text-2xl'
                 >
                     FOOL STACK
                 </button>
@@ -120,7 +123,7 @@ const DialogPage: VoidComponent = () => {
 
                 >
                     <XCOMInfoPanel
-                    class="h-2/3"
+                        class="h-2/3"
                     >
                         nearly there
                     </XCOMInfoPanel>
@@ -181,6 +184,38 @@ const DialogPage: VoidComponent = () => {
                     dismissText="Wait, what...?"
                 >
                     &nbsp;
+                </Modal>
+
+
+
+                <button
+                    type='button'
+                    onClick={() => setModalAboutIsOpen(true)}
+                    class='btn btn-accent text-2xl'
+                >
+                    About
+                </button>
+
+                <Modal
+                    isShown={modalAboutIsOpen()}
+                    closeModal={closeModalAbout}
+                    modalStyles={{
+                        background: "transparent",
+                        "min-width": "666px",
+                        "align-content": "left",
+                        "color": "white",
+                    }}
+                    dismissText="sweet"
+                >
+                    <XCOMInfoPanel>
+                        <h2>Alaricus/solid-dialog</h2>
+
+                        Library: <a href="https://github.com/Alaricus/solid-dialog" target="_blank" rel="noreferrer">github.com/Alaricus/solid-dialog</a><br />
+                        <br />
+                        Source of this page: <a href="https://github.com/AshSimmonds/solidstart-17/blob/main/src/routes/dialog.tsx" target="_blank" rel="noreferrer">/blob/main/src/routes/dialog.tsx</a><br />
+                        <br />
+                        <h3>PRs welcome</h3>
+                    </XCOMInfoPanel>
                 </Modal>
 
             </div>
