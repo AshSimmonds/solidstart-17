@@ -1,4 +1,4 @@
-import type { VoidComponent } from "solid-js"
+import type { Component, JSX, VoidComponent } from "solid-js"
 import { Title } from "solid-start"
 import Layout from "~/layouts/Layout"
 import XCOMInfoPanel from "~/components/XCOMInfoPanel"
@@ -18,7 +18,7 @@ const ShowHidePage: VoidComponent = () => {
 
 
             <div class="w-full flex flex-wrap gap-4 justify-evenly">
-                <div class="w-96">
+                <ShowHideCard>
                     <CheckboxShowHide
                         showWhat="Zag"
                     >
@@ -33,9 +33,10 @@ const ShowHidePage: VoidComponent = () => {
                             Library: <a href="https://zagjs.com/components/solid/checkbox" target="_blank" rel="noreferrer">zagjs.com</a>
                         </XCOMInfoPanel>
                     </CheckboxShowHide>
-                </div>
+                </ShowHideCard>
 
-                <div class="w-96">
+
+                <ShowHideCard>
                     <ShowHide
                         showWhat="Kobalte"
                     >
@@ -50,9 +51,30 @@ const ShowHidePage: VoidComponent = () => {
                             Library: <a href="https://kobalte.dev/docs/components/toggle-button" target="_blank" rel="noreferrer">kobalte.dev</a>
                         </XCOMInfoPanel>
                     </ShowHide>
-                </div>
-            </div>
+                </ShowHideCard>
 
+
+                <ShowHideCard>
+                    <details
+                        class={`btn btn-sm btn-outline btn-warning mt-8`}
+                    >
+                        <summary>{`Show <details>`}</summary>
+                        <XCOMInfoPanel class="mt-4 text-left">
+                            <pre>{`
+                                <details>
+                                    <summary>Stuff to show on toggle element</summary>
+
+                                    <p>
+                                        Content that is hidden until clicking the toggle element.
+                                    </p>
+                                </details>
+                            `}</pre>
+                        </XCOMInfoPanel>
+                    </details>
+                </ShowHideCard>
+
+
+            </div>
 
             <XCOMOperationBriefing
                 title="ZagJS.com"
@@ -88,3 +110,18 @@ const ShowHidePage: VoidComponent = () => {
 }
 
 export default ShowHidePage
+
+
+// interface ShowHideCardProps {
+//     children: JSX.Element
+// }
+
+// const ShowHideCard: Component<ShowHideCardProps> = (props) => {
+const ShowHideCard: Component<{ children: JSX.Element }> = (props) => {
+    return (
+        <div class="">
+            {props.children}
+        </div>
+    )
+}
+
