@@ -52,6 +52,28 @@ const ShowHidePage: VoidComponent = () => {
                         </XCOMInfoPanel>
                     </ShowHide>
                 </ShowHideCard>
+
+
+                <ShowHideCard>
+                    <details
+                        class={`btn btn-sm btn-outline btn-warning mt-8`}
+                    >
+                        <summary>{`Show <details>`}</summary>
+                        <XCOMInfoPanel class="mt-4 text-left">
+                            <pre>{`
+                                <details>
+                                    <summary>Stuff to show on toggle element</summary>
+
+                                    <p>
+                                        Content that is hidden until clicking the toggle element.
+                                    </p>
+                                </details>
+                            `}</pre>
+                        </XCOMInfoPanel>
+                    </details>
+                </ShowHideCard>
+
+
             </div>
 
             <XCOMOperationBriefing
@@ -95,9 +117,9 @@ export default ShowHidePage
 // }
 
 // const ShowHideCard: Component<ShowHideCardProps> = (props) => {
-const ShowHideCard: Component<{children: JSX.Element}> = (props) => {
-        return (
-        <div class="w-96">
+const ShowHideCard: Component<{ children: JSX.Element }> = (props) => {
+    return (
+        <div class="">
             {props.children}
         </div>
     )
