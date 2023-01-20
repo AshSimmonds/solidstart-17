@@ -118,7 +118,7 @@ export default function Root() {
           rel="preload"
           as="font"
           type="font/woff2"
-          href="./fonts/C64.OTF"
+          href="./fonts/C64.TTF"
           crossorigin="anonymous"
         />
 
@@ -126,7 +126,7 @@ export default function Root() {
           rel="preload"
           as="font"
           type="font/woff2"
-          href="./fonts/GAMING286.OTF"
+          href="./fonts/GAMING286.TTF"
           crossorigin="anonymous"
         />
 
@@ -134,7 +134,15 @@ export default function Root() {
           rel="preload"
           as="font"
           type="font/woff2"
-          href="./fonts/GAMINGPENTIUM.OTF"
+          href="./fonts/GAMINGPENTIUM.TTF"
+          crossorigin="anonymous"
+        />
+
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href="./fonts/OCR-A.TTF"
           crossorigin="anonymous"
         />
 
