@@ -144,6 +144,18 @@
             url("../fonts/fira-code-v21-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
+/* share-tech-mono-regular - latin */
+@font-face {
+    font-family: "Share Tech Mono";
+    font-style: normal;
+    font-weight: 400;
+    src: local(""),
+        url("../fonts/share-tech-mono-v15-latin-regular.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+            url("../fonts/share-tech-mono-v15-latin-regular.woff")
+            format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
 body {
     /* background-color: #020013; */
     background-color: #000a14;
@@ -238,6 +250,7 @@ a:hover {
     /* font-family: "WELBUTRIN", monospace; */
     /* font-family: "WWDIGITAL", monospace; */
     /* font-family: "Fira Code", monospace; */
+    /* font-family: "Share Tech Mono", monospace; */
     font-family: "", monospace;
 }
 
