@@ -123,6 +123,16 @@
             format("truetype"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
+/* WWDIGITAL.TTF - monospace */
+@font-face {
+    font-family: "WWDIGITAL";
+    font-style: normal;
+    /* font-weight: 800; */
+    src: local(""), url("../fonts/WWDIGITAL.TTF") format("truetype"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */ url("../fonts/WWDIGITAL.TTF")
+            format("truetype"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
 body {
     /* background-color: #020013; */
     background-color: #000a14;
@@ -215,6 +225,7 @@ a:hover {
     /* font-family: "GAMINGPENTIUM", monospace; */
     /* font-family: "OCR-A", monospace; */
     /* font-family: "WELBUTRIN", monospace; */
+    /* font-family: "WWDIGITAL", monospace; */
     font-family: "", monospace;
 }
 
