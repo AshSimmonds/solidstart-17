@@ -83,16 +83,15 @@
             format("truetype"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
-
-
-
-
-
-
-
-
-
-
+/* GAMING286.TTF - monospace */
+@font-face {
+    font-family: "GAMING286";
+    font-style: normal;
+    /* font-weight: 800; */
+    src: local(""), url("../fonts/GAMING286.TTF") format("truetype"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */ url("../fonts/GAMING286.OTF")
+            format("truetype"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
 
 body {
     /* background-color: #020013; */
@@ -182,7 +181,8 @@ a:hover {
     /* font-family: "VT323", monospace; */
     /* font-family: "HACKER1984", monospace; */
     /* font-family: "C64", monospace; */
-    font-family: '', monospace;
+    /* font-family: "GAMING286", monospace; */
+    font-family: "", monospace;
 }
 
 .btn-outline {

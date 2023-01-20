@@ -122,6 +122,17 @@ export default function Root() {
           crossorigin="anonymous"
         />
 
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href="./fonts/GAMING286.OTF"
+          crossorigin="anonymous"
+        />
+
+
+
+
 
 
         <Link
