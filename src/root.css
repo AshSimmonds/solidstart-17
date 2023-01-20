@@ -258,13 +258,13 @@ a:hover {
     /* font-family: "C64", monospace; */
     /* font-family: "GAMING286", monospace; */
     /* font-family: "GAMINGPENTIUM", monospace; */
-    /* font-family: "OCR-A", monospace; */
+    font-family: "OCR-A", monospace;
     /* font-family: "WELBUTRIN", monospace; */
     /* font-family: "WWDIGITAL", monospace; */
     /* font-family: "Fira Code", monospace; */
     /* font-family: "Share Tech Mono", monospace; */
     /* font-family: "Source Code Pro", monospace; */
-    font-family: "", monospace;
+    /* font-family: "", monospace; */
 }
 
 .btn-outline {
@@ -344,8 +344,8 @@ a.btn:hover {
 
 .prose pre,
 pre {
-    font-family: "OCR A", monospace;
-    font-size: 0.8rem;
+    font-family: "OCR-A", monospace;
+    font-size: 1.25rem;
     background-color: #000000;
     color: #ffffff;
     padding: 1rem;
@@ -392,7 +392,9 @@ textarea::placeholder {
 code {
     background-color: #000000;
     color: #00ff00;
-    padding: 0.5rem;
+    padding: 0.25rem;
+    font-family: "OCR-A", monospace;
+    font-size: 1.25rem;
 }
 
 .translucent {
