@@ -126,6 +126,14 @@ export default function Root() {
           rel="preload"
           as="font"
           type="font/woff2"
+          href="./fonts/source-code-pro-v22-latin-regular.woff2"
+          crossorigin="anonymous"
+        />
+
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
           href="./fonts/HACKER1984.OTF"
           crossorigin="anonymous"
         />
