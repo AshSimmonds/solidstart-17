@@ -63,6 +63,111 @@
             url("../fonts/vt323-v17-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
+/* HACKER1984.OTF - monospace */
+@font-face {
+    font-family: "HACKER1984";
+    font-style: normal;
+    /* font-weight: 400; */
+    src: local(""), url("../fonts/HACKER1984.OTF") format("opentype"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */ url("../fonts/HACKER1984.OTF")
+            format("opentype"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* C64.TTF - monospace */
+@font-face {
+    font-family: "C64";
+    font-style: normal;
+    /* font-weight: 800; */
+    src: local(""), url("../fonts/C64.TTF") format("truetype"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */ url("../fonts/C64.TTF")
+            format("truetype"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* GAMING286.TTF - monospace */
+@font-face {
+    font-family: "GAMING286";
+    font-style: normal;
+    /* font-weight: 800; */
+    src: local(""), url("../fonts/GAMING286.TTF") format("truetype"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */ url("../fonts/GAMING286.TTF")
+            format("truetype"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* GAMINGPENTIUM.TTF - monospace */
+@font-face {
+    font-family: "GAMINGPENTIUM";
+    font-style: normal;
+    /* font-weight: 800; */
+    src: local(""), url("../fonts/GAMINGPENTIUM.TTF") format("truetype"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+            url("../fonts/GAMINGPENTIUM.TTF") format("truetype"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* OCR-A.TTF - monospace */
+@font-face {
+    font-family: "OCR-A";
+    font-style: normal;
+    /* font-weight: 800; */
+    src: local(""), url("../fonts/OCR-A.TTF") format("truetype"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */ url("../fonts/OCR-A.TTF")
+            format("truetype"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* WELBUTRIN.TTF - monospace */
+@font-face {
+    font-family: "WELBUTRIN";
+    font-style: normal;
+    /* font-weight: 800; */
+    src: local(""), url("../fonts/WELBUTRIN.TTF") format("truetype"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */ url("../fonts/WELBUTRIN.TTF")
+            format("truetype"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* WWDIGITAL.TTF - monospace */
+@font-face {
+    font-family: "WWDIGITAL";
+    font-style: normal;
+    /* font-weight: 800; */
+    src: local(""), url("../fonts/WWDIGITAL.TTF") format("truetype"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */ url("../fonts/WWDIGITAL.TTF")
+            format("truetype"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* fira-code-regular - latin */
+@font-face {
+    font-family: "Fira Code";
+    font-style: normal;
+    font-weight: 400;
+    src: local(""),
+        url("../fonts/fira-code-v21-latin-regular.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+            url("../fonts/fira-code-v21-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* share-tech-mono-regular - latin */
+@font-face {
+    font-family: "Share Tech Mono";
+    font-style: normal;
+    font-weight: 400;
+    src: local(""),
+        url("../fonts/share-tech-mono-v15-latin-regular.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+            url("../fonts/share-tech-mono-v15-latin-regular.woff")
+            format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* source-code-pro-regular - latin */
+@font-face {
+    font-family: "Source Code Pro";
+    font-style: normal;
+    font-weight: 400;
+    src: local(""),
+        url("../fonts/source-code-pro-v22-latin-regular.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+            url("../fonts/source-code-pro-v22-latin-regular.woff")
+            format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
 body {
     /* background-color: #020013; */
     background-color: #000a14;
@@ -148,7 +253,18 @@ a:hover {
     text-decoration: none;
     transition-duration: 69ms;
     color: #000000;
-    font-family: "VT323", monospace;
+    /* font-family: "VT323", monospace; */
+    /* font-family: "HACKER1984", monospace; */
+    /* font-family: "C64", monospace; */
+    /* font-family: "GAMING286", monospace; */
+    /* font-family: "GAMINGPENTIUM", monospace; */
+    font-family: "OCR-A", monospace;
+    /* font-family: "WELBUTRIN", monospace; */
+    /* font-family: "WWDIGITAL", monospace; */
+    /* font-family: "Fira Code", monospace; */
+    /* font-family: "Share Tech Mono", monospace; */
+    /* font-family: "Source Code Pro", monospace; */
+    /* font-family: "", monospace; */
 }
 
 .btn-outline {
@@ -228,8 +344,8 @@ a.btn:hover {
 
 .prose pre,
 pre {
-    font-family: "OCR A", monospace;
-    font-size: 0.8rem;
+    font-family: "OCR-A", monospace;
+    font-size: 1.25rem;
     background-color: #000000;
     color: #ffffff;
     padding: 1rem;
@@ -276,7 +392,9 @@ textarea::placeholder {
 code {
     background-color: #000000;
     color: #00ff00;
-    padding: 0.5rem;
+    padding: 0.25rem;
+    font-family: "OCR-A", monospace;
+    font-size: 1.25rem;
 }
 
 .translucent {
