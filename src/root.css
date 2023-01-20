@@ -113,6 +113,16 @@
             format("truetype"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
+/* WELBUTRIN.TTF - monospace */
+@font-face {
+    font-family: "WELBUTRIN";
+    font-style: normal;
+    /* font-weight: 800; */
+    src: local(""), url("../fonts/WELBUTRIN.TTF") format("truetype"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */ url("../fonts/WELBUTRIN.TTF")
+            format("truetype"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
 body {
     /* background-color: #020013; */
     background-color: #000a14;
@@ -204,6 +214,7 @@ a:hover {
     /* font-family: "GAMING286", monospace; */
     /* font-family: "GAMINGPENTIUM", monospace; */
     /* font-family: "OCR-A", monospace; */
+    /* font-family: "WELBUTRIN", monospace; */
     font-family: "", monospace;
 }
 
