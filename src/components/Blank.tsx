@@ -7,7 +7,7 @@ interface BlankProps {
 
 const Blank: Component<BlankProps> = (props) => {
     return (
-        <div class={`blank ${props.class}`}>
+        <div class={` ${props.class} `}>
             {props.children}
         </div>
     )
