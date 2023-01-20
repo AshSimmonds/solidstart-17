@@ -1,7 +1,10 @@
-import type { VoidComponent } from "solid-js"
+import { For } from "solid-js";
+import type { Component, JSX, VoidComponent } from "solid-js"
 import { A, Title } from "solid-start"
 import Layout from "~/layouts/Layout"
 import Alert from "~/components/Alert"
+
+const fontFamilies = ["hacker", "c64", "casio", "coder", "gamer", "pentium"]
 
 const FontPage: VoidComponent = () => {
     return (
@@ -9,13 +12,13 @@ const FontPage: VoidComponent = () => {
             <Title>Fonts</Title>
             <h1>Fonts</h1>
 
-            <div class="text-center mx-auto ">
+            <div class="mx-auto ">
 
-                <h2>Centered stuff</h2>
-
-                <div>
-                    nothing to see here
-                </div>
+                <For each={fontFamilies}>
+                    {(family) => (
+                        <FontCard family={family} class="w-1/2" />
+                    )}
+                </For>
 
             </div>
 
@@ -25,3 +28,27 @@ const FontPage: VoidComponent = () => {
 }
 
 export default FontPage
+
+
+
+interface FontCardProps {
+    family: string,
+    class?: string,
+    children?: JSX.Element
+}
+
+const FontCard: Component<FontCardProps> = (props) => {
+    return (
+        <div class={` font-${props.family} ${props.class} `}>
+            <h2>{props.family}</h2>
+            {props.children}
+            <br />
+            |...|....|....|....|....|....|....|....|....|....|....|....|....|....|....|....|<br />
+            1   5    10   15   20   25   30   35   40   45   50   55   60   65   70   75   80<br />
+            The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the<br />
+            iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm<br />
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br />
+            ...................................... 012340123401234012340123401234012340123
+        </div>
+    )
+}
