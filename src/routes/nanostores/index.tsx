@@ -23,7 +23,11 @@ const NanostoresPage: VoidComponent = () => {
                 summary="Dunno yet"
                 class=" m-12"
             >
-                <ul>
+                This page is just testing what it does, using minimal example demos.<br />
+                <br />
+                Please mess around and submit PRs to improve this resource.<br />
+
+                <ul class="my-4">
                     <li>
                         Library: <a href="https://github.com/nanostores/nanostores#solid" target="_blank" rel="noreferrer">
                             https://github.com/nanostores/nanostores#solid
