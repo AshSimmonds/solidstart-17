@@ -4,7 +4,7 @@ import { A, Title } from "solid-start"
 import Layout from "~/layouts/Layout"
 import Alert from "~/components/Alert"
 
-const fontFamilies = ["hacker", "c64", "casio", "coder", "gamer", "pentium"]
+const fontFamilies = ["hacker", "casio", "c64", "coder", "gamer", "pentium"]
 
 const FontPage: VoidComponent = () => {
     return (
@@ -12,11 +12,23 @@ const FontPage: VoidComponent = () => {
             <Title>Fonts</Title>
             <h1>Fonts</h1>
 
-            <div class="mx-auto ">
+
+            <div class="text-xs hidden">
+                TODO: figure out why this hack is needed to get the font to load
+                <span class="font-hacker" >asdf</span>
+                <span class="font-casio" >asdf</span>
+                <span class="font-c64" >asdf</span>
+                <span class="font-coder" >asdf</span>
+                <span class="font-gamer" >asdf</span>
+                <span class="font-pentium" >asdf</span>
+            </div>
+
+
+            <div class="mx-auto md:w-3/4">
 
                 <For each={fontFamilies}>
                     {(family) => (
-                        <FontCard family={family} class="w-1/2" />
+                        <FontCard family={family} class="w-full" />
                     )}
                 </For>
 
