@@ -23,11 +23,18 @@ const NanostoresPage: VoidComponent = () => {
                 summary="Dunno yet"
                 class=" m-12"
             >
-                <div>
-                    <a href="https://github.com/nanostores/nanostores#solid" target="_blank" rel="noreferrer">
-                        https://github.com/nanostores/nanostores#solid
-                    </a>
-                </div>
+                <ul>
+                    <li>
+                        Library: <a href="https://github.com/nanostores/nanostores#solid" target="_blank" rel="noreferrer">
+                            https://github.com/nanostores/nanostores#solid
+                        </a>
+                    </li>
+                    <li>
+                        Source: <a href="https://github.com/AshSimmonds/solidstart-17/tree/main/src/routes/nanostores" target="_blank" rel="noreferrer">
+                            /src/routes/nanostores
+                        </a>
+                    </li>
+                </ul>
             </XCOMOperationBriefing>
 
 
