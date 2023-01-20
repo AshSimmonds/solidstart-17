@@ -130,6 +130,13 @@ export default function Root() {
           crossorigin="anonymous"
         />
 
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href="./fonts/GAMINGPENTIUM.OTF"
+          crossorigin="anonymous"
+        />
 
 
 

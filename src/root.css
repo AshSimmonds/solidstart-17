@@ -79,7 +79,7 @@
     font-style: normal;
     /* font-weight: 800; */
     src: local(""), url("../fonts/C64.TTF") format("truetype"),
-        /* Chrome 26+, Opera 23+, Firefox 39+ */ url("../fonts/C64.OTF")
+        /* Chrome 26+, Opera 23+, Firefox 39+ */ url("../fonts/C64.TTF")
             format("truetype"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
@@ -89,8 +89,18 @@
     font-style: normal;
     /* font-weight: 800; */
     src: local(""), url("../fonts/GAMING286.TTF") format("truetype"),
-        /* Chrome 26+, Opera 23+, Firefox 39+ */ url("../fonts/GAMING286.OTF")
+        /* Chrome 26+, Opera 23+, Firefox 39+ */ url("../fonts/GAMING286.TTF")
             format("truetype"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* GAMINGPENTIUM.TTF - monospace */
+@font-face {
+    font-family: "GAMINGPENTIUM";
+    font-style: normal;
+    /* font-weight: 800; */
+    src: local(""), url("../fonts/GAMINGPENTIUM.TTF") format("truetype"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+            url("../fonts/GAMINGPENTIUM.TTF") format("truetype"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 body {
@@ -182,6 +192,7 @@ a:hover {
     /* font-family: "HACKER1984", monospace; */
     /* font-family: "C64", monospace; */
     /* font-family: "GAMING286", monospace; */
+    /* font-family: "GAMINGPENTIUM", monospace; */
     font-family: "", monospace;
 }
 
