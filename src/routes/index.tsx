@@ -95,7 +95,7 @@ const Home: VoidComponent = () => {
             <For each={queryInRoute.data}>
               {(post) => (
                 <XCOMOperationBriefing
-                  title="Embedded in route"
+                  title="createQuery() in route func"
                   subtitle={`${post.title}`}
                   summary={`ID: ${post.id} - https://jsonplaceholder.typicode.com/posts/${post.id}`}
                   icon={
