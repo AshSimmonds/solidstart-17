@@ -9,7 +9,7 @@ const XCOMInfoPanel: Component<XCOMInfoPanelProps> = (props) => {
 
     return (
 
-        <section id="xcomgreenright" data-augmented-ui="" class={`pt-1 p-4 ${props.class} `}>
+        <section id="xcomgreenright" data-augmented-ui="" class={`pt-2 pb-4 px-12 ${props.class} `}>
             {props.children}
         </section>
 
