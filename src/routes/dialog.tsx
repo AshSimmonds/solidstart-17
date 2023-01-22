@@ -52,9 +52,12 @@ const DialogPage: VoidComponent = () => {
                     isShown={modalledWithChildrenIsOpen()}
                     closeModal={closeModalledWithChildren}
                     dismissText='ACCEPT'
+                    // disableDefaultDesktopStyles={true}
+                    // disableDefaultMobileStyles={true}
                     modalStyles={{
                         background: "transparent",
-                        "min-width": "666px",
+                        "width": "90%",
+                        "max-width": "666px",
                         "align-content": "left",
                         "color": "white",
                     }}
@@ -63,6 +66,7 @@ const DialogPage: VoidComponent = () => {
                         title="Operation: BLURRY MODAL"
                         subtitle="Customizable and accessible modals for solid-js"
                         summary="NOT SURE IF TAILWIND WORKS HERE"
+                        class="text-left"
                     >
                         <img src="https://picsum.photos/180/180" alt="random image" class="float-right ml-4" />
                         <p>Bacon ipsum dolor amet tongue hamburger short ribs venison prosciutto swine andouille bresaola kielbasa chuck. Tri-tip pork chop shank ball tip strip steak picanha, chicken cupim bacon sirloin ham fatback chislic.</p>
@@ -86,13 +90,12 @@ const DialogPage: VoidComponent = () => {
                     closeModal={closeModalStack}
                     modalStyles={{
                         background: "transparent",
-                        "min-width": "666px",
-                        "align-content": "left",
+                        "width": "100%",
                         "color": "white",
                     }}
                     dismissText="SYS64378"
                 >
-                    <h1>FULL STACK DEV JOURNEY: COMPLETE</h1>
+                    <h1>FULL STACK DEV JOURNEY: <code>COMPLETE</code></h1>
                 </Modal>
 
                 <Modal
@@ -143,7 +146,8 @@ const DialogPage: VoidComponent = () => {
                     dismissText='ACCEPT'
                     modalStyles={{
                         background: "transparent",
-                        "min-width": "666px",
+                        "width": "90%",
+                        "max-width": "666px",
                         "align-content": "left",
                         "color": "white",
                     }}
@@ -174,7 +178,8 @@ const DialogPage: VoidComponent = () => {
                     closeModal={closeModalStack}
                     modalStyles={{
                         background: "transparent",
-                        "min-width": "666px",
+                        "width": "90%",
+                        "max-width": "666px",
                         "align-content": "center",
                         "color": "yellow",
                         "font-family": "Comic Sans MS, Comic Sans, cursive",
@@ -201,7 +206,8 @@ const DialogPage: VoidComponent = () => {
                     closeModal={closeModalAbout}
                     modalStyles={{
                         background: "transparent",
-                        "min-width": "666px",
+                        "width": "90%",
+                        "max-width": "666px",
                         "align-content": "left",
                         "color": "white",
                     }}
