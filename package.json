@@ -43,6 +43,7 @@
     "solid-trpc": "^0.1.0-ssr.1",
     "solidstart-17": "file:",
     "undici": "5.15.1",
+    "xstate": "^4.35.2",
     "zod": "^3.20.2"
   },
   "engines": {
