@@ -66,7 +66,7 @@ const Home: VoidComponent = () => {
 
         <div class="text-3xl mt-4">
           <TextField.Root value={postId().toString()} onValueChange={setPostId}>
-            <TextField.Input class="input input-primary w-16" />
+            <TextField.Input class="input input-primary w-24" />
           </TextField.Root>
         </div>
 
