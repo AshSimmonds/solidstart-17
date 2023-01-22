@@ -76,46 +76,46 @@ body,
 .prose body,
 .prose {
     font-family: "Rajdhani", sans-serif;
-    font-size: 1.25rem;
+    font-size: 1.25em;
 }
 
 .prose h1,
 h1 {
-    font-size: 2rem;
-    margin-top: 0rem;
-    margin-bottom: 1rem;
+    font-size: 2em;
+    margin-top: 0em;
+    margin-bottom: 1em;
     font-weight: 800;
 }
 .prose h2,
 h2 {
-    font-size: 1.75rem;
-    margin-top: 1rem;
-    margin-bottom: 0.75rem;
+    font-size: 1.75em;
+    margin-top: 1em;
+    margin-bottom: 0.75em;
     font-weight: 600;
 }
 .prose h3,
 h3 {
-    font-size: 1.5rem;
-    margin-top: 0.75rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.5em;
+    margin-top: 0.75em;
+    margin-bottom: 0.5em;
 }
 .prose h4,
 h4 {
-    font-size: 1.25rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.25em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 }
 .prose h5,
 h5 {
-    font-size: 1.15rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.15em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 }
 .prose h6,
 h6 {
-    font-size: 1.1rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.1em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 }
 
 h1,
@@ -162,7 +162,7 @@ a.btn:hover {
 /* Tailwind makes ALL THE BUTTONS UPPER CASE PLS STAHP */
 .btn {
     text-transform: initial;
-    font-size: 1.25rem;
+    font-size: 1.25em;
 }
 
 .btn-scifi {
@@ -196,10 +196,10 @@ a.btn:hover {
 }
 
 .badge {
-    padding: 0.75rem;
-    padding-bottom: 1rem;
-    margin-left: 0.25rem;
-    margin-right: 0.25rem;
+    padding: 0.75em;
+    padding-bottom: 1em;
+    margin-left: 0.25em;
+    margin-right: 0.25em;
 }
 
 .none {
@@ -229,13 +229,13 @@ a.btn:hover {
 .prose pre,
 pre {
     font-family: "OCR A", monospace;
-    font-size: 0.8rem;
+    font-size: 0.8em;
     background-color: #000000;
     color: #ffffff;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    padding: 1em;
+    border-radius: 0.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 }
 
 /* .modal {
@@ -250,11 +250,11 @@ pre {
 }
 
 .menu :where(li) > :where(*:not(ul)) {
-    /* gap: 0.75rem;
-  padding-left: 1rem;
-  padding-right: 1rem; */
-    padding-top: 0.1rem;
-    padding-bottom: 0.1rem;
+    /* gap: 0.75em;
+  padding-left: 1em;
+  padding-right: 1em; */
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
     /* color: currentColor; */
 }
 
@@ -264,7 +264,7 @@ pre {
 .checkbox,
 .radio,
 .file {
-    font-size: 1.4rem;
+    font-size: 1.4em;
 }
 
 input::placeholder,
@@ -274,9 +274,11 @@ textarea::placeholder {
 }
 
 code {
+    font-family: "OCR A", monospace;
+    /* font-size: 0.8em; */
     background-color: #000000;
     color: #00ff00;
-    padding: 0.5rem;
+    padding: 0.5em;
 }
 
 .translucent {
@@ -285,21 +287,21 @@ code {
 
 hr {
     border-top: 1px solid #73e5ff66;
-    margin-top: 0.25rem;
-    margin-bottom: 0.25rem;
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
 }
 
 .hh01 {
     --hud-tl1: clip;
-    --hud-tl1-size: 2.5rem;
+    --hud-tl1-size: 2.5em;
 
     --hud-br1: clip;
-    --hud-br1-size: 2.5rem;
+    --hud-br1-size: 2.5em;
 
     --hud-inlay-bg: #b2a5fd;
     /* --hud-inlay-opacity: 0.33; */
 
-    padding: 1.5rem;
+    padding: 1.5em;
     margin: auto;
     max-width: 66%;
 }
@@ -307,25 +309,25 @@ hr {
 .hexed {
     --hud-inlay-bg: #0bb2b0;
     --hud-inlay-opacity: 0.1;
-    --hud-bl-inset: 0.75rem;
+    --hud-bl-inset: 0.75em;
     --hud-tr1: clip;
-    --hud-tr1-size: 3rem;
+    --hud-tr1-size: 3em;
     --hud-l2: clip;
     --hud-l1: clip;
     --hud-bl2: round;
     --hud-bl1: clip;
-    --hud-l2-size: 1rem;
+    --hud-l2-size: 1em;
     --hud-l2-inset-y: 25%;
-    --hud-l1-size: 0.25rem;
-    --hud-bl2-size: 1rem;
-    --hud-bl1-size: 0.5rem;
+    --hud-l1-size: 0.25em;
+    --hud-bl2-size: 1em;
+    --hud-bl1-size: 0.5em;
     --hud-b1: clip;
-    --hud-b1-size: 1rem;
+    --hud-b1-size: 1em;
     --hud-b1-inset-x: 33%;
     --hud-b2: clip;
-    --hud-b2-size: 0.25rem;
+    --hud-b2-size: 0.25em;
     --hud-br1: round;
-    --hud-br1-size: 1rem;
+    --hud-br1-size: 1em;
     width: 100%;
     height: max(50%, 150px);
     --hud-inlay-all: 7px;
@@ -333,7 +335,7 @@ hr {
     --hud-border-opacity: 0.75;
     --hud-border-bg: #0bb2b0;
 
-    padding: 3rem;
+    padding: 3em;
     margin: auto;
     max-width: 80%;
 }
@@ -363,7 +365,7 @@ hr {
     /* padding-bottom: 20px;
     max-width: 66%; */
     /* margin: 0.25rem auto; */
-    /* font-size: 0.9rem; */
+    /* font-size: 0.9em; */
     /*background: url("/img/chubie.png") right 30px bottom 10px / auto 75% no-repeat;*/
 }
 
@@ -381,7 +383,7 @@ hr {
 
 #xcomgreenright b {
     color: white;
-    font-size: 1rem;
+    font-size: 1em;
 }
 
 #xcomblueleft {
@@ -410,11 +412,11 @@ hr {
     /* padding-bottom: 20px;
     max-width: 66%; */
     /* margin: 0.25rem auto; */
-    /* font-size: 0.9rem; */
+    /* font-size: 0.9em; */
     /*background: url("/img/chubie.png") right 30px bottom 10px / auto 75% no-repeat;*/
 }
 
 .planchunk {
     border: 1px solid #73e5ff55;
-    padding: 0.75rem;
+    padding: 0.75em;
 }
