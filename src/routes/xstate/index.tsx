@@ -1,6 +1,14 @@
 import type { VoidComponent } from "solid-js";
 import { Title } from "solid-start"
+import { interpret } from "xstate";
 import Layout from "~/layouts/Layout"
+import { checkoutMachine } from "./checkoutMachine"
+
+const actor = interpret(checkoutMachine)
+
+console.log(`xstate | index.tsx | actor`, actor)
+
+
 
 const XStatePage: VoidComponent = () => {
 
