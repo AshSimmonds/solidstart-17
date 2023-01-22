@@ -1,3 +1,4 @@
+/* eslint-disable solid/reactivity */
 import type {
     AnyStateMachine,
     EventFrom,

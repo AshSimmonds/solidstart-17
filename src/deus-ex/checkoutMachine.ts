@@ -1,8 +1,12 @@
-import type { ActorRefFrom } from "xstate";
+import type { ActorRefFrom} from "xstate";
+import { assign } from "xstate";
 import { createMachine } from "xstate"
 
 export const checkoutMachine = createMachine({
     "id": "Checkout",
+    context: {
+        vipCode: null,
+    },
     "initial": "cart",
     "states": {
         "cart": {
@@ -13,7 +17,11 @@ export const checkoutMachine = createMachine({
                 "PAYPAL": {
                     "target": "payment"
                 },
-                "ENTER_VIP_CODE": {}
+                "ENTER_VIP_CODE": {
+                    actions: assign({
+                        vipCode: (context, event) => event.value
+                    })
+                }
             }
         },
         "shipping": {
@@ -54,9 +62,10 @@ export const checkoutMachine = createMachine({
         },
         events: {} as { "type": "CHECKOUT" } | { "type": "NEXT" } | { "type": "ORDER" } | { "type": "PAYPAL" } | { "type": "ENTER_VIP_CODE" } | { "type": "SELECT_SHIPPING_ADDRESS" } | { "type": "SELECT_SHIPPING_METHOD" } | { "type": "ENTER_EMAIL" } | { "type": "ENTER_MOBILE" } | { "type": "SELECT_PAYMENT_METHOD" } | { "type": "AGREE" }
     },
-    context: {},
     predictableActionArguments: true,
     preserveActionOrder: true,
+    // eslint-disable-next-line @typescript-eslint/consistent-type-imports
+    tsTypes: {} as import("./checkoutMachine.typegen").Typegen0,
 })
 
 
