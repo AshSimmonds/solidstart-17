@@ -106,6 +106,85 @@ export default function Root() {
           crossorigin="anonymous"
         />
 
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href="./fonts/fira-code-v21-latin-regular.woff2"
+          crossorigin="anonymous"
+        />
+
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href="./fonts/share-tech-mono-v15-latin-regular.woff2"
+          crossorigin="anonymous"
+        />
+
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href="./fonts/source-code-pro-v22-latin-regular.woff2"
+          crossorigin="anonymous"
+        />
+
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href="./fonts/HACKER1984.OTF"
+          crossorigin="anonymous"
+        />
+
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href="./fonts/C64.TTF"
+          crossorigin="anonymous"
+        />
+
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href="./fonts/GAMING286.TTF"
+          crossorigin="anonymous"
+        />
+
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href="./fonts/GAMINGPENTIUM.TTF"
+          crossorigin="anonymous"
+        />
+
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href="./fonts/OCR-A.TTF"
+          crossorigin="anonymous"
+        />
+
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href="./fonts/WELBUTRIN.TTF"
+          crossorigin="anonymous"
+        />
+
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href="./fonts/WWDIGITAL.TTF"
+          crossorigin="anonymous"
+        />
 
 
 

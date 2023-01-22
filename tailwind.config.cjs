@@ -6,6 +6,14 @@ module.exports = {
           backdropBrightness: {
               25: ".25",
           },
+          fontFamily: {
+            hacker: ["HACKER1984", "monospace"],
+            c64: ["C64", "monospace"],
+            casio: ["WWDIGITAL", "monospace"],
+            coder: ["OCR-A", "monospace"],
+            gamer: ["GAMING286", "monospace"],
+            pentium: ["GAMINGPENTIUM", "monospace"],
+          }
       },
   },
   plugins: [
