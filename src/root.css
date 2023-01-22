@@ -278,7 +278,7 @@ a.btn:hover {
 /* Tailwind makes ALL THE BUTTONS UPPER CASE PLS STAHP */
 .btn {
     text-transform: initial;
-    font-size: 1.25em;
+    /* font-size: 1.25em; */
 }
 
 .btn-scifi {
