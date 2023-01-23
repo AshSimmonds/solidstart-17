@@ -1,11 +1,12 @@
-import type { ActorRefFrom} from "xstate";
+import { ActorRefFrom, interpret } from "xstate";
+import { actions } from "xstate";
 import { assign } from "xstate";
 import { createMachine } from "xstate"
 
 export const checkoutMachine = createMachine({
     "id": "Checkout",
     context: {
-        vipCode: null,
+        vipCode: '',
     },
     "initial": "cart",
     "states": {
@@ -18,9 +19,10 @@ export const checkoutMachine = createMachine({
                     "target": "payment"
                 },
                 "ENTER_VIP_CODE": {
-                    actions: assign({
-                        vipCode: (context, event) => event.value
-                    })
+                    "actions": "setVipCode"
+                    // "actions": [
+                    //     "setVipCode"
+                    // ]
                 }
             }
         },
@@ -54,10 +56,24 @@ export const checkoutMachine = createMachine({
         "confirmation": {
             "type": "final"
         }
-    }
-    ,
+    },
+    // actions: {
+        // setVipCode: (context, event) => {
+            // console.log(`counterMachine.ts setVipCode context: ${JSON.stringify(context)} `);
+            // console.log(`counterMachine.ts setVipCode event: ${JSON.stringify(event)} `);
+            // console.log(`counterMachine.ts incrementCounter event: ${JSON.stringify(event)} `);
+
+            // console.log(`counterMachine.ts incrementCounter context: ${JSON.stringify(context)} `);
+
+            // context.count++;
+            // context.incrementCount++;
+        // },
+    // },
+
     schema: {
+        // eslint-disable-next-line @typescript-eslint/ban-types
         context: {} as {
+            vipCode: string;
 
         },
         events: {} as { "type": "CHECKOUT" } | { "type": "NEXT" } | { "type": "ORDER" } | { "type": "PAYPAL" } | { "type": "ENTER_VIP_CODE" } | { "type": "SELECT_SHIPPING_ADDRESS" } | { "type": "SELECT_SHIPPING_METHOD" } | { "type": "ENTER_EMAIL" } | { "type": "ENTER_MOBILE" } | { "type": "SELECT_PAYMENT_METHOD" } | { "type": "AGREE" }
@@ -66,11 +82,15 @@ export const checkoutMachine = createMachine({
     preserveActionOrder: true,
     // eslint-disable-next-line @typescript-eslint/consistent-type-imports
     tsTypes: {} as import("./checkoutMachine.typegen").Typegen0,
+
+
+
 })
 
 
 
+// export default checkoutMachine
 
+export const checkoutMachineActor = interpret(checkoutMachine).start()
 
-export type CheckoutActor = ActorRefFrom<typeof checkoutMachine>
 

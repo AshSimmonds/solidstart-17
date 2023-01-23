@@ -10,13 +10,13 @@
           
         };
         missingImplementations: {
-          actions: never;
+          actions: "setVipCode";
           delays: never;
           guards: never;
           services: never;
         };
         eventsCausingActions: {
-          
+          "setVipCode": "ENTER_VIP_CODE";
         };
         eventsCausingDelays: {
           

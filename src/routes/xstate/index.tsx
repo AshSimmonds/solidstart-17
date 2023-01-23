@@ -1,15 +1,20 @@
-import type { VoidComponent } from "solid-js";
+import type { VoidComponent } from "solid-js"
 import { Title } from "solid-start"
+import type { ActorRefFrom} from "xstate"
 import { interpret } from "xstate"
 import Layout from "~/layouts/Layout"
 import { checkoutMachine } from "~/deus-ex/checkoutMachine"
+import { checkoutMachineActor } from "~/deus-ex/checkoutMachine"
 import { useMachine } from "./useMachine"
 import { createSignal } from "solid-js"
 import XCOMInfoPanel from "~/components/XCOMInfoPanel"
 
-const actorHoisted = interpret(checkoutMachine).start()
+// const actorHoisted = interpret(checkoutMachine).start()
 
-console.log(`xstate | index.tsx | actorHoisted`, actorHoisted)
+// console.log(`xstate | index.tsx | actorHoisted`, actorHoisted)
+
+
+type CheckoutActor = ActorRefFrom<typeof checkoutMachine>
 
 
 
@@ -17,14 +22,15 @@ const XStatePage: VoidComponent = () => {
 
     const actorPage = useMachine(checkoutMachine)
 
-    const [theState, setTheState] = createSignal(actorHoisted.initialState)
+    const [theState, setTheState] = createSignal(checkoutMachineActor.initialState)
 
     // const stateValue = () => state().value.toString()
 
 
 
-    actorHoisted.onTransition((newState) => {
-        console.log(`xstate | index.tsx | actorHoisted.onTransition | state`, newState)
+    checkoutMachineActor.onTransition((newState) => {
+        console.log(`xstate | index.tsx | actorHoisted.onTransition | newState`, newState)
+        // console.log(`\nxstate | index.tsx | actorHoisted.onTransition | newState.context\n`, newState.context)
         setTheState(newState)
     })
 
@@ -43,7 +49,7 @@ const XStatePage: VoidComponent = () => {
                 <XCOMInfoPanel>
                     <h3>Cart</h3>
 
-                    <button class="btn btn-primary" onClick={() => actorHoisted.send("CHECKOUT")}>NEXT</button>
+                    <button class="btn btn-primary" onClick={() => checkoutMachineActor.send("CHECKOUT")}>NEXT</button>
                 </XCOMInfoPanel>
             )}
 
@@ -54,10 +60,17 @@ const XStatePage: VoidComponent = () => {
                     <input class="input input-bordered" type="text" placeholder="VIP code"
                         value={theState().context.vipCode || ""}
                         data-xstate-event="ENTER_VIP_CODE"
-                        onChange={(e) => actorHoisted.send({ 
-                            type: "ENTER_VIP_CODE", 
-                            value: e.target.value 
-                        })}
+                        onChange={(e) => {
+                            const fixTarget = e.target as HTMLInputElement
+
+                            console.log(`\nxstate | index.tsx | fixTarget.value\n`, fixTarget.value)
+                            checkoutMachineActor.send({
+                            // actorPage.send({
+                                type: "ENTER_VIP_CODE",
+                                value: fixTarget.value
+                            })
+                        }
+                        }
                     />
 
                     <h4>asdf{theState().context.vipCode}qwer</h4>
@@ -87,7 +100,7 @@ const XStatePage: VoidComponent = () => {
 
             <h3><code>actorHoisted = interpret(checkoutMachine).start()</code></h3>
             <pre>
-                {JSON.stringify(actorHoisted, null, 4)}
+                {JSON.stringify(checkoutMachineActor, null, 4)}
             </pre>
 
 
