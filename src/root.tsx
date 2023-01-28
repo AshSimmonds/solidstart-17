@@ -2,7 +2,6 @@
 import "./root.css";
 import { Suspense } from "solid-js";
 import {
-  // A,
   Body,
   ErrorBoundary,
   FileRoutes,
@@ -14,7 +13,7 @@ import {
   Scripts,
   Title,
 } from "solid-start";
-import { trpc, client, queryClient } from "~/utils/trpc";
+import { trpc, queryClient } from "~/utils/trpc";
 
 export default function Root() {
   return (
@@ -201,14 +200,14 @@ export default function Root() {
 
       </Head>
       <Body>
-        <trpc.Provider client={client} queryClient={queryClient}>
-          <ErrorBoundary>
-            <Suspense fallback={<div>Loading...</div>}>
+        <trpc.Provider queryClient={queryClient}>
+          <Suspense>
+            <ErrorBoundary>
               <Routes>
                 <FileRoutes />
               </Routes>
-            </Suspense>
-          </ErrorBoundary>
+            </ErrorBoundary>
+          </Suspense>
         </trpc.Provider>
         <Scripts />
       </Body>
