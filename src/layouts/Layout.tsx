@@ -110,6 +110,7 @@ const HeaderLinks: Component<HeaderLinksProps> = (props) => {
                     <li><A href="/dialog">Dialog / Modal</A></li>
                     <li><A href="/fonts">Fonts</A></li>
                     <li><A href="/nanostores">Nanostores</A></li>
+                    <li><A href="/trpc">tRPC</A></li>
                     <li><A href="/typography">Typography</A></li>
                     <li><A href="/showhide">Show/Hide toggles</A></li>
                 </ul>
