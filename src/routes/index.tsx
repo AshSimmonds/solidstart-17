@@ -1,9 +1,6 @@
-import { For } from "solid-js";
-import { createSignal } from "solid-js"
 import Layout from "~/layouts/Layout"
-import Card from "~/components/Card"
 import { Suspense, type VoidComponent } from "solid-js";
-import { A, Head, Title, Meta, Link } from "solid-start";
+import { Title } from "solid-start";
 import { trpc } from "../utils/trpc";
 import { signOut, signIn } from "@auth/solid-start/client";
 import { createServerData$ } from "solid-start/server";
@@ -13,9 +10,6 @@ import { authOpts } from "./api/auth/[...solidauth]";
 
 const HomePage: VoidComponent = () => {
     const hello = trpc.exampleRouter.hello.useQuery(() => ({ name: "from tRPC" }));
-
-    const [cardCownt, setCardCount] = createSignal(9)
-
 
 
     return (
