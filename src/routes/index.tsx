@@ -63,7 +63,7 @@ const AuthShowcase: VoidComponent = () => {
                 {sessionData() && <span>Logged in as {sessionData()?.user?.display_name}</span>}
             </p>
             <button
-                class="rounded-full bg-white/10 px-10 py-3 font-semibold text-white no-underline transition hover:bg-white/20"
+                class="btn"
                 onClick={
                     sessionData() ? () => void signOut() : () => void signIn("discord")
                 }
@@ -72,7 +72,7 @@ const AuthShowcase: VoidComponent = () => {
             </button>
 
             <button
-                class="rounded-full bg-white/10 px-10 py-3 font-semibold text-white no-underline transition hover:bg-white/20"
+                class=""
                 onClick={
                     !sessionData() ? () => void signOut() : () => void signIn("discord")
                 }
