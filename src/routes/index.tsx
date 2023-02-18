@@ -64,20 +64,18 @@ const AuthShowcase: VoidComponent = () => {
             </p>
             <button
                 class="btn"
-                onClick={
-                    sessionData() ? () => void signOut() : () => void signIn("discord")
-                }
+                onClick={ () => void signIn("discord") }
             >
-                {sessionData() ? "Sign out" : "Sign in"}
+                "Sign in"
             </button>
 
             <button
                 class=""
                 onClick={
-                    !sessionData() ? () => void signOut() : () => void signIn("discord")
+                    () => void signOut()
                 }
             >
-                {!sessionData() ? "Sign out" : "Sign in"}
+                "Sign out"
             </button>
 
             <h3>sessionData()</h3>

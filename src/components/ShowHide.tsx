@@ -1,11 +1,11 @@
 import { ToggleButton } from "@kobalte/core"
-import type { Component, JSX } from "solid-js";
+import type { Component, JSX } from "solid-js"
 import { createSignal } from "solid-js"
 import { Show } from "solid-js"
 
 interface ShowHideProps {
     showWhat?: string,
-    class?: string,    
+    class?: string,
     children: JSX.Element
 }
 

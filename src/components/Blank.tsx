@@ -2,7 +2,7 @@ import type { Component, JSX } from "solid-js"
 
 interface BlankProps {
     class?: string,
-    children: JSX.Element
+    children?: JSX.Element
 }
 
 const Blank: Component<BlankProps> = (props) => {

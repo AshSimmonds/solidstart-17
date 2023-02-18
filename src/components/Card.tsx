@@ -20,6 +20,11 @@ interface CardProps {
 }
 
 const Card: Component<CardProps> = (props) => {
+
+    // TODO: delete hack if <Card /> is ever used, just testing click vs A
+    props.buttonText = props.title
+    props.buttonUrl = props.cardUrl
+
     return (
         <div class={` card border transition-all 
             ${props.outline ? " border border-secondary shadow-sm shadow-base-100 " : " bg-base-100 border-base-200 shadow-md "}

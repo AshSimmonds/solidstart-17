@@ -1,11 +1,23 @@
+import { getSession } from "@auth/solid-start"
 import { Switch, Match } from "solid-js"
 import { createServerData$ } from "solid-start/server"
+import { authOpts } from "~/routes/api/auth/[...solidauth]"
 // import { authenticator } from "~/server/auth"
 
-export const userObjectPromise = () => createServerData$(async (_, { request }) => {
-        const user = undefined // await authenticator.isAuthenticated(request)
+const useSession = () => {
+    return createServerData$(
+        async (_, { request }) => {
+            return await getSession(request, authOpts)
+        },
+        { key: () => ["auth_user"] }
+    )
+}
 
-        if (!user) {
+export const userObjectPromise = () => createServerData$(async (_, { request }) => {
+    const session = useSession()
+    const user = () => session()?.user
+
+        if (!user()) {
             return {
                 displayName: 'Visitor' as string,
                 avatar: '' as string,
@@ -17,7 +29,8 @@ export const userObjectPromise = () => createServerData$(async (_, { request }) 
 
 
 export default function Avatar() {
-    const user = userObjectPromise()
+    const session = useSession()
+    const user = () => session()?.user
 
     return (
         <Switch
@@ -25,12 +38,12 @@ export default function Avatar() {
                 <>?</>
             }
         >
-            <Match when={user.loading}>
+            {/* <Match when={session.loading}>
                 <>...</>
-            </Match>
+            </Match> */}
 
             <Match when={user()?.avatar}>
-                <><img src={user()?.avatar} alt={`${user()?.displayName} avatar`} /></>
+                <img src={`https://cdn.discordapp.com/avatars/1060128397688307764/${user()?.avatar}.webp?size=160`} alt={`${user()?.displayName} avatar`} class="mask mask-circle" />
             </Match>
         </Switch>
     )
