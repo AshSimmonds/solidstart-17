@@ -80,7 +80,7 @@ const AuthShowcase: VoidComponent = () => {
 
             <h3>sessionData()</h3>
             <pre>
-                {JSON.stringify(sessionData(), null, 4)}
+                {JSON.stringify(sessionData()?.user, null, 4)}
             </pre>
 
         </div>
