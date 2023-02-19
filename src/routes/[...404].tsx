@@ -16,7 +16,6 @@ export const useSession = () => {
 
 export default function NotFound() {
     const session = useSession()
-    const loading = session.loading
     const user = () => session()?.user
 
     return (
@@ -27,19 +26,13 @@ export default function NotFound() {
                     <A href="/" class="btn btn-outline btn-warning text-4xl" >404 | Not Found</A>
                 </h1>
 
-                <Show when={user()}>
+                {/* <Show when={user()}>
                     <h2>user()</h2>
                     <pre class="text-left">
                         {JSON.stringify(user(), null, 4)}
                     </pre>
-                </Show>
+                </Show> */}
 
-                <h2>Loading: {loading}</h2>
-
-                <h2>session()</h2>
-                <pre class="text-left">
-                    {JSON.stringify(session(), null, 4)}
-                </pre>
             </div>
         </Layout>
     )
