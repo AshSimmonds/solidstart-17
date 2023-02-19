@@ -77,6 +77,8 @@ export const authOpts: SolidAuthConfig = {
 
 
     providers: [
+        // @ts-expect-error 
+        // https://discordapp.com/channels/722131463138705510/1076736408301097023/1076806213519548476
         Auth0Provider({
             clientId: serverEnv.AUTH0_CLIENT_ID,
             clientSecret: serverEnv.AUTH0_CLIENT_SECRET,
