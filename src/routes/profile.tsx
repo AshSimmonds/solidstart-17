@@ -28,21 +28,6 @@ const ProfilePage: VoidComponent = () => {
     const session = useSession()
     const user = () => session()?.user
 
-    // if (!user) {
-    //     return (
-    //         <Layout>
-    //             <Title>Profile</Title>
-    //             <h1>Profile</h1>
-    //             <LogInOutButton />
-    //         </Layout>
-    //     )
-    // }
-
-    // const res = trpc.exampleRouter.secret.useQuery(undefined, {
-    //     get enabled() {
-    //         return !!user()
-    //     },
-    // })
 
     const [discordUser, setDiscordUser] = createSignal(trpc.discordRouter.getCurrentUser.useQuery())
 
@@ -56,8 +41,13 @@ const ProfilePage: VoidComponent = () => {
 
             <LogInOutButton class="float-right" />
 
-            <Avatar />
+            <Switch>
+                <Match when={user()}>
 
+                    <Avatar />
+
+                </Match>
+            </Switch>
 
             <h2>
                 user() metadata
