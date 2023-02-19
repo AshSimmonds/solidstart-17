@@ -1,6 +1,6 @@
 import { A } from "solid-start"
 import Avatar from "../components/Avatar"
-import type { Component, JSX} from "solid-js";
+import { Component, JSX, Suspense } from "solid-js";
 import { Show } from "solid-js"
 
 interface LayoutProps {
@@ -18,7 +18,11 @@ const Layout: Component<LayoutProps> = (props) => {
 
             <main class="bg-base-300 mx-0 sm:mx-auto sm:w-full md:w-11/12 lg:w-11/12 xl:w-10/12 p-2 md:p-4 md:pt-0 border-2 border-primary border-opacity-20 md:pb-16">
 
-                {props.children}
+                <Suspense>
+
+                    {props.children}
+
+                </Suspense>
 
             </main>
 
