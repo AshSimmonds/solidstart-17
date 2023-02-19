@@ -58,32 +58,34 @@ const AuthShowcase: VoidComponent = () => {
     const sessionData = createSession();
 
     return (
-        <div class="flex flex-col items-center justify-center gap-4">
-            <p class="text-center text-2xl text-white">
-                {sessionData() && <span>Logged in as {sessionData()?.user?.display_name}</span>}
-            </p>
-            <button
-                class="btn"
-                onClick={ () => void signIn("discord") }
-            >
-                "Sign in"
-            </button>
+        <Layout>
+            <div class="flex flex-col items-center justify-center gap-4">
+                <p class="text-center text-2xl text-white">
+                    {sessionData() && <span>Logged in as {sessionData()?.user?.display_name}</span>}
+                </p>
+                <button
+                    class="btn"
+                    onClick={() => void signIn("discord")}
+                >
+                    "Sign in"
+                </button>
 
-            <button
-                class=""
-                onClick={
-                    () => void signOut()
-                }
-            >
-                "Sign out"
-            </button>
+                <button
+                    class=""
+                    onClick={
+                        () => void signOut()
+                    }
+                >
+                    "Sign out"
+                </button>
 
-            <h3>sessionData()</h3>
-            <pre>
-                {JSON.stringify(sessionData()?.user, null, 4)}
-            </pre>
+                <h3>user metadata</h3>
+                <pre class="">
+                    {JSON.stringify(sessionData()?.user, null, 4)}
+                </pre>
 
-        </div>
+            </div>
+        </Layout>
     );
 };
 
