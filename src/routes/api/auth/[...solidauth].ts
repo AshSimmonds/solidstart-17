@@ -1,6 +1,8 @@
 import { SolidAuth, type SolidAuthConfig } from "@auth/solid-start"
 // import Github from "@auth/core/providers/github"
 import Discord from "@auth/core/providers/discord"
+import Auth0Provider from "@auth/core/providers/auth0";
+
 import { serverEnv } from "~/env/server"
 
 // TODO: get rid of magick numbers
@@ -75,6 +77,12 @@ export const authOpts: SolidAuthConfig = {
 
 
     providers: [
+        Auth0Provider({
+            clientId: serverEnv.AUTH0_CLIENT_ID,
+            clientSecret: serverEnv.AUTH0_CLIENT_SECRET,
+            issuer: serverEnv.AUTH0_DOMAIN,
+        }),
+
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore types error
         // Github({
@@ -123,13 +131,13 @@ export const authOpts: SolidAuthConfig = {
 
                 // const updatedPlanForm = await planRouter.updatePlan.fetch({ planForm: thePlan() })
 
-                const userLoginLogResponse = await _logUserLogin(user)
+                // const userLoginLogResponse = await _logUserLogin(user)
 
-                console.log(`\n\napi / auth / [...solidauth].ts userLoginLogResponse: ${JSON.stringify(userLoginLogResponse, null, 4)}`)
+                // console.log(`\n\napi / auth / [...solidauth].ts userLoginLogResponse: ${JSON.stringify(userLoginLogResponse, null, 4)}`)
 
-                const discordResponse = _pokeDiscord(`**${user.displayName}** (user#${user.id}) just logged in.`)
+                // const discordResponse = _pokeDiscord(`**${user.displayName}** (user#${user.id}) just logged in.`)
 
-                console.log(`\n\napi / auth / [...solidauth].ts discordResponse: ${JSON.stringify(discordResponse, null, 4)}`)
+                // console.log(`\n\napi / auth / [...solidauth].ts discordResponse: ${JSON.stringify(discordResponse, null, 4)}`)
 
                 return user
 
@@ -199,30 +207,6 @@ async function _getMemberDetails(memberId: string) {
 }
 
 
-
-
-async function _pokeDiscord(sayWhatNow: string) {
-
-    const headersList = {
-        "Accept": "*/*",
-        "Content-Type": "application/x-www-form-urlencoded"
-    }
-
-    const bodyContent = `content=${sayWhatNow}`
-
-    const responseDiscord = fetch(`${serverEnv.DISCORD_WEBHOOK_PROBATIOTRON_URL}`, {
-        method: "POST",
-        body: bodyContent,
-        headers: headersList
-    })
-
-    // const discordData = responseDiscord.text()
-
-    // console.log(`discord.ts _pokeDiscord discordData: ${discordData}`)
-
-    return responseDiscord
-
-}
 
 
 

@@ -39,9 +39,17 @@ const LogInOutButton: Component<LogInOutButtonProps> = (props) => {
             <Show when={!user() && !props.hideLogin}>
                 <Button.Root
                     class={` ${logInOutButtonClass} btn-info ${props.class} `}
+                    onClick={() => signIn("auth0")}
+                >
+                    {props.loginButtonText || 'log in via Auth0'}
+                    {props.children}
+                </Button.Root>
+
+                <Button.Root
+                    class={` ${logInOutButtonClass} btn-info ${props.class} `}
                     onClick={() => signIn("discord")}
                 >
-                    {props.loginButtonText || 'log in'}
+                    {props.loginButtonText || 'log in via Discord'}
                     {props.children}
                 </Button.Root>
             </Show>
