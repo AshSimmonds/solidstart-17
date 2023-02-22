@@ -4,6 +4,7 @@ import Discord from "@auth/core/providers/discord"
 import Auth0Provider from "@auth/core/providers/auth0";
 
 import { serverEnv } from "~/env/server"
+import { useNavigate } from "solid-start";
 
 // TODO: get rid of magick numbers
 const roleCaptain = '1053489393740029962'
@@ -28,10 +29,7 @@ export const authOpts: SolidAuthConfig = {
 
     callbacks: {
         async jwt({ token, user }) {
-
-            console.log(`\n\n[...solidauth].ts / callbacks jwt /\ntoken:\n ${JSON.stringify(token, null, 4)}`);
-
-            console.log(`\n\n[...solidauth].ts / callbacks jwt /\nuser:\n ${JSON.stringify(user, null, 4)}`);
+            const thisFunctionName = "\n\n[...solidauth].ts callbacks jwt | "
 
             if (user) {
                 token = {
@@ -44,17 +42,10 @@ export const authOpts: SolidAuthConfig = {
         },
 
 
-
-
         async session({ session, user, token }) {
-
-            console.log(`\n\n[...solidauth].ts / callbacks session /\ntoken:\n ${JSON.stringify(token, null, 4)}`);
-
-            console.log(`\n\n[...solidauth].ts / callbacks session /\nuser:\n ${JSON.stringify(user, null, 4)}`);
+            const thisFunctionName = "\n\n[...solidauth].ts callbacks session | "
 
             if (session.user) {
-
-                // session.user.lastActive = Date.now()
 
                 if (!session.user.id) {
                     if (token.sub) {
@@ -64,16 +55,14 @@ export const authOpts: SolidAuthConfig = {
 
             }
 
-            console.log(`\n\n([...solidauth].ts / callbacks session / session:\n ${JSON.stringify(session, null, 4)}`);
-
             return {
                 ...session,
                 ...token
             }
         },
     },
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    // adapter: PrismaAdapter(prisma) as any,
+
+
 
 
     providers: [
@@ -95,8 +84,9 @@ export const authOpts: SolidAuthConfig = {
             clientId: serverEnv.DISCORD_CLIENT_ID,
             clientSecret: serverEnv.DISCORD_CLIENT_SECRET,
             profile: async (profile) => {
+                const thisFunctionName = "\n\n[...solidauth].ts providers discord profile | "
 
-                console.log(`\n\napi / auth / [...solidauth].ts / profile\n`, JSON.stringify(profile, null, 4))
+                console.log(`${thisFunctionName}\n`, JSON.stringify(profile, null, 4))
 
                 const memberDetails = await _getMemberDetails(profile.id)
 
@@ -118,37 +108,14 @@ export const authOpts: SolidAuthConfig = {
                 // users.push(user)
                 // }
 
-                console.log(`\n\napi / auth / [...solidauth].ts / user\n`, JSON.stringify(user, null, 4))
-
-                // console.log(`auth.ts authenticator user: ${JSON.stringify(user, null, 4)}`)
 
                 if (!user) {
-                    console.error(`\n\napi / auth / [...solidauth].ts / user not found`)
+                    console.error(`${thisFunctionName} user not found`)
                     throw new Error("User not found")
                 }
 
-                // const userLoginLogResponse = trpc.userRouter.logLogin.useQuery(() => ({ userId: user.id, displayName: user.displayName }))
-
-                // const userLoginLogResponse = await userRouter.logLogin.fetch({ userId: user.id, displayName: user.displayName })
-
-                // const updatedPlanForm = await planRouter.updatePlan.fetch({ planForm: thePlan() })
-
-                // const userLoginLogResponse = await _logUserLogin(user)
-
-                // console.log(`\n\napi / auth / [...solidauth].ts userLoginLogResponse: ${JSON.stringify(userLoginLogResponse, null, 4)}`)
-
-                // const discordResponse = _pokeDiscord(`**${user.displayName}** (user#${user.id}) just logged in.`)
-
-                // console.log(`\n\napi / auth / [...solidauth].ts discordResponse: ${JSON.stringify(discordResponse, null, 4)}`)
-
                 return user
 
-
-                // }
-                // catch (error) {
-                //     console.error(`auth.ts authenticator error: ${JSON.stringify(error, null, 4)}`)
-                //     return error
-                // }
             }
         }
 
@@ -167,14 +134,9 @@ export const { GET, POST } = SolidAuth(authOpts)
 
 
 
-
-
-
-
-
-
-
 async function _getMemberDetails(memberId: string) {
+    const thisFunctionName = "\n\n[...solidauth].ts _getMemberDetails | "
+    // console.log(`${thisFunctionName} memberId: ${memberId}`)
 
     const headersList = {
         "Accept": "*/*",
@@ -183,7 +145,7 @@ async function _getMemberDetails(memberId: string) {
 
     const discordGuildMemberUrl = `https://discord.com/api/guilds/${serverEnv.DISCORD_GUILD_ID}/members/${memberId}`
 
-    console.log(`\n\napi / auth / [...solidauth].ts / _getMemberDetails discordGuildMemberUrl:\n ${discordGuildMemberUrl}`)
+    console.log(`${thisFunctionName} discordGuildMemberUrl:\n ${discordGuildMemberUrl}`)
 
     const response = await fetch(`${discordGuildMemberUrl}`, {
         method: "GET",
@@ -192,23 +154,20 @@ async function _getMemberDetails(memberId: string) {
 
     const discordData = await response.json()
 
-    console.log(`\n\napi / auth / [...solidauth].ts / getMemberRolesDiscord discordData:\n ${JSON.stringify(discordData, null, 4)}`)
+    console.log(`${thisFunctionName} discordData:\n ${JSON.stringify(discordData, null, 4)}`)
 
-    // const navigate = useNavigate()
+    // "Unknown Guild" - user likely not a part of Discord server
+    // if (discordData.code === 10004) {
+    //     console.error(`${thisFunctionName} Unknown Guild`)
 
-    // if (discordData.code === 10007) {
-    //     console.log(`auth.ts _getMemberDetails redirecting to https://discord.gg/kCJgEzAz`)
-
-    //     navigate(`https://discord.gg/kCJgEzAz`)
+    //     return {
+    //         roles: [],
+    //         nick: null
+    //     }
     // } else {
-    //     console.log(`auth.ts _getMemberDetails discordData: ${JSON.stringify(discordData, null, 4)}`)
-
-    return discordData
+        return discordData
     // }
-
 }
-
-
 
 
 
