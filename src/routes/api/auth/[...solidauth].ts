@@ -7,9 +7,7 @@ import { serverEnv } from "~/env/server"
 import { useNavigate } from "solid-start";
 
 // TODO: get rid of magick numbers
-const roleCaptain = '1053489393740029962'
-const roleAdmin = '1053715007306739833'
-const roleCoach = '1061882595060756510'
+const roleAdmin = '666'
 
 export type User = {
     id: string
@@ -90,6 +88,8 @@ export const authOpts: SolidAuthConfig = {
 
                 const memberDetails = await _getMemberDetails(profile.id)
 
+                console.log(`${thisFunctionName} memberDetails:\n`, JSON.stringify(memberDetails, null, 4))
+
                 // let user = users.find((u) => u.id === profile.id)
 
                 // if (!user) {
@@ -100,9 +100,7 @@ export const authOpts: SolidAuthConfig = {
                     displayName: memberDetails.nick ? memberDetails.nick : profile.username,
                     locale: profile.locale,
                     avatar: profile.avatar,
-                    admin: memberDetails.roles.includes(roleAdmin),
-                    coach: memberDetails.roles.includes(roleCoach),
-                    captain: memberDetails.roles.includes(roleCaptain),
+                    admin: memberDetails.roles && memberDetails.roles.includes(roleAdmin),
                     memberDetails: memberDetails,
                 }
                 // users.push(user)
