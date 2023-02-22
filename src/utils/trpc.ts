@@ -9,7 +9,7 @@ const getBaseUrl = () => {
   if (process.env.NODE_ENV === "production")
   return "https://solidstart.g0.wtf";
 
-  return `http://localhost:${process.env.PORT ?? 5173}`;
+  return `http://localhost:${process.env.PORT ?? 3000}`;
 };
 
 export const trpc = createTRPCSolidStart<IAppRouter>({
