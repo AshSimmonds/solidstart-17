@@ -7,6 +7,7 @@ export const serverScheme = z.object({
   DISCORD_CLIENT_SECRET: z.string(),
   DISCORD_BOT_TOKEN: z.string(),
   DISCORD_GUILD_ID: z.string(),
+  DISCORD_INVITE_LINK: z.string(),
   AUTH_SECRET: z.string(),
   AUTH_TRUST_HOST: z.string().optional(),
   NEXTAUTH_URL: z.string().optional(),
