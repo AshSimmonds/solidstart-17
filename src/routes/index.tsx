@@ -9,7 +9,7 @@ import { authOpts } from "./api/auth/[...solidauth]";
 
 
 const HomePage: VoidComponent = () => {
-    const hello = trpc.exampleRouter.hello.useQuery(() => ({ name: "from tRPC" }));
+    // const hello = trpc.exampleRouter.hello.useQuery(() => ({ name: "from tRPC" }));
 
 
     return (
@@ -22,9 +22,9 @@ const HomePage: VoidComponent = () => {
 
 
             <div class="flex flex-col items-center gap-2">
-                <p class="text-2xl text-white">
+                {/* <p class="text-2xl text-white">
                     {hello.data ?? "Loading tRPC query"}
-                </p>
+                </p> */}
                 <Suspense>
                     <AuthShowcase />
                 </Suspense>
