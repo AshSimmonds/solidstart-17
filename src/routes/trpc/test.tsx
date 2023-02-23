@@ -20,6 +20,12 @@ const TrpcTestPage: VoidComponent = () => {
                     <A href="/trpc/stress" class="btn btn-primary">NAVIGATION LINK</A><br />
                     <br />
                     <a href="/trpc/stress" class="btn btn-primary">NORMAL LINK</a>
+                    <br />
+                    <br />
+                    <hr />
+                    PR welcome to fix this, here: <br />
+                    <br />
+                    <a href="https://github.com/AshSimmonds/solidstart-17/issues/48" target="_blank" class="btn btn-warning">GitHub issue #48</a>
                 </div>
             </section>
         </Layout>
