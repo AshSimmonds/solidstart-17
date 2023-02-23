@@ -17,32 +17,18 @@ const HomePage: VoidComponent = () => {
             <Title>SolidStart SSR</Title>
             <h1>SolidStart SSR</h1>
 
-            <h2>tRPC stress test</h2>
-            <section class="mx-auto w-full md:w-4/5 lg:w-2/3 xl:w-1/2 flex justify-evenly gap-4">
-                <div>
-                    The tRPC test page just gets four very light and simple chunks of data.<br />
-                    <br />
-                    When you navigate there by <code>A href</code> link <A href="/trpc/test" >like this</A> (capital A) it works fine.<br />
-                    <br />
-                    But try <a href="/trpc/test" target="_blank">open in new page</a> or with a normal link and it will quite often time out.<br />
-                    <br />
-                    <A href="/trpc/test" class="btn btn-primary">NAVIGATION LINK</A><br />
-                    <br />
-                    <a href="/trpc/test" class="btn btn-primary">NORMAL LINK</a>
-                </div>
-            </section>
 
 
 
 
-            {/* <div class="flex flex-col items-center gap-2">
+            <div class="flex flex-col items-center gap-2">
                 <p class="text-2xl text-white">
                     {hello.data ?? "Loading tRPC query"}
                 </p>
                 <Suspense>
                     <AuthShowcase />
                 </Suspense>
-            </div> */}
+            </div>
 
 
 
